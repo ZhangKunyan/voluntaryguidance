@@ -1,0 +1,18 @@
+<view class="container">
+<i-card extra="{{userInfo.nickName}}" thumb="{{userInfo.avatarUrl}}" i-class="card" wx-if="{{hasUserInfo}}"  >
+</i-card>
+<i-card extra="游客"  thumb="../../Images/nologin.png" i-class="card" wx-if="{{!hasUserInfo}}" >
+</i-card>
+<i-cell-group>
+  <i-cell title="关注院校" is-link url="/pages/dashboard/index">
+    <i-icon type="like_fill" slot="icon" />
+  </i-cell>
+  <i-cell title="关注专业" is-link url="/pages/collection/collection">
+    <i-icon type="like_fill" slot="icon" />
+  </i-cell>
+  <i-cell title="收藏" is-link url="/pages/dashboard/index">
+    <i-icon type="like_fill" slot="icon" />
+  </i-cell>
+</i-cell-group>
+<i-button bind:click="handleClick" type="error" wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo" >点击登录</i-button>
+</view> 

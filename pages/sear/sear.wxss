@@ -1,0 +1,22 @@
+/* pages/sear/sear.wxss */.searchbar-result{
+    margin-top: 0;
+    font-size: 14px;
+}
+.searchbar-result .weui-cell__bd{
+  padding: 2px 0 2px 20px;
+  color: var(--weui-FG-1);
+}
+.searchbar-result:before{
+    display: none;
+}
+.collegeList{
+  height: 150rpx;
+  display: flex;
+  padding:20rpx;
+  border-bottom: 5px solid #e0e0e0;
+}
+.collegeList image{
+  height: 150rpx;
+  width: 150rpx;
+  margin:0px 50rpx;
+}

@@ -1,0 +1,94 @@
+<view class="swiper">
+  <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" class="swiper">
+    <block wx:for="{{background}}" wx:key="*this">
+      <swiper-item>
+        <image src="{{item}}"  mode="scaleToFill"></image>
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+
+<view class="sear" bindtap="tosear">
+  <view class="weui-search-bar {{inputShowed ? 'weui-search-bar_focusing' : ''}}" id="searchBar">
+    <view class="weui-search-bar__box">
+      <i class="weui-icon-search"></i>
+    </view>
+    <label class="weui-search-bar__label" bindtap="showInput">
+      <i class="weui-icon-search"></i>
+      <span class="weui-search-bar__text">搜索院校/专业</span>
+    </label>
+  </view>
+</view>
+
+
+<navigator url="{{notice.link}}" hover-class="navigator-hover">
+  <i-notice-bar icon="systemprompt" loop>
+    {{notice.text}}
+  </i-notice-bar>
+</navigator>
+
+<view class="grid">
+  <i-row>
+    <block wx:for="{{grids1}}" wx:key="*this">
+      <i-col span="6" i-class="col-class">
+        <navigator url="{{item.link}}" hover-class="navigator-hover">
+          <view class="grid-item">
+            <view>
+              <image src="{{item.image}}"></image>
+            </view>
+            <span>{{item.text}}</span>
+          </view>
+        </navigator>
+      </i-col>
+    </block>
+  </i-row>
+</view>
+
+
+
+<view class="detail">
+  <i-card title="考生： {{mydata.name}}" extra="{{mydata.region[0]}}" wx:if="{{mydata != ''}}">
+    <view slot="content">
+      <i-steps>
+        <i-step status="finish" icon="barrage">
+          <view slot="title">
+            <view wx-if="{{steps[0]==0}}">已完成</view>
+            <view wx-if="{{steps[0]==1}}">进行中</view>
+            <view wx-if="{{steps[0]==2}}">未开始</view>
+          </view>
+          <view slot="content">
+            录入高考成绩
+          </view>
+        </i-step>
+        <i-step status="process" icon="brush">
+          <view slot="title">
+            <view wx-if="{{steps[1]==0}}">已完成</view>
+            <view wx-if="{{steps[1]==1}}">进行中</view>
+            <view wx-if="{{steps[1]==2}}">未开始</view>
+          </view>
+          <view slot="content" icon="camera">
+            进行性格评测
+          </view>
+        </i-step>
+        <i-step icon="collection">
+          <view slot="title">
+            <view wx-if="{{steps[2]==0}}">已完成</view>
+            <view wx-if="{{steps[2]==1}}">进行中</view>
+            <view wx-if="{{steps[2]==2}}">未开始</view>
+          </view>
+          <view slot="content">
+            查看推荐内容
+          </view>
+        </i-step>
+      </i-steps>
+    </view>
+  </i-card>
+
+  <i-card i-class="color" wx:if="{{mydata == ''}}" bindtap="toMyExam">
+    <view slot="content" class="color-item primary">
+      <view class="color-item-title">你还没有录入信息</view>
+      <view class="color-item-content"># click me</view>
+    </view>
+  </i-card>
+</view>
+<i-load-more loading="{{ false }}" />

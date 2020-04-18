@@ -1,0 +1,34 @@
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+/**头像**/
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+/**昵称**/
+.userinfo-nickname {
+  color: #aaa;
+}
+
+.usermotto {
+  margin-top: 200px;
+}
+.input1 {
+  border: 1px solid #c0c0c0
+}
+.input2 {
+  border: 1px solid #c0c0c0
+}
+.input3 {
+  border: 1px solid #c0c0c0
+}
+.buttons{
+  width: 400rpx;
+  height: 100rpx;
+  margin: 20rpx;
+}

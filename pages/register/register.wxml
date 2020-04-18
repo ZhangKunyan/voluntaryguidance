@@ -1,0 +1,28 @@
+<view class="container">
+
+<view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+
+</view>
+
+<view>
+  <view class="input1">
+    <input class="username" placeholder="请输入用户名" value="{{username}}" bindinput="inputChangeHandle"></input>
+  </view>
+  <view class="input2">
+    <input class="password" placeholder="请输入密码" value="{{password}}" bindinput="inputChangeHandle"></input>
+  </view>
+  <view class="input3">
+    <input class="password" placeholder="请确认密码" value="{{password}}" bindinput="inputChangeHandle"></input>
+  </view>
+   <view class="buttons">
+  <button type="primary" bindtap="successHandle">注册</button>
+  </view>
+</view>
+
+</view>

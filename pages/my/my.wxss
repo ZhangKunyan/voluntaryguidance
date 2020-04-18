@@ -1,0 +1,6 @@
+.container{
+  margin-top: 30rpx;
+}
+.card image {
+  border-radius: 50%;
+}
