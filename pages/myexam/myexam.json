@@ -1,0 +1,13 @@
+{
+  "navigationBarTitleText": "我的高考",
+  "usingComponents": {
+    "i-input": "../../dist/input/index",
+    "i-button": "../../dist/button/index",
+    "i-panel": "../../dist/panel/index",
+    "i-divider": "../../dist/divider/index",
+    "i-cell": "../../dist/cell/index",
+    "i-radio-group": "../../dist/radio-group/index",
+    "i-radio": "../../dist/radio/index",
+    "i-toast": "../../dist/toast/index"
+  }
+}

@@ -1,0 +1,9 @@
+.class-radiogroup{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.picker{
+  font-size: 20rpx;
+}

@@ -1,0 +1,47 @@
+<view>
+  <i-panel title="基本信息">
+    <i-input value="{{ name }}" type="text"  title="考生姓名："  mode="wrapped" bind:blur="saveName" />
+  </i-panel>
+  <i-panel title="高考科类">
+    <i-radio-group current="{{classcurrent}}" bindchange="handleClassChange">
+      <view class="class-radiogroup">
+        <i-radio wx:for="{{class1}}" position="{{position}}" wx:key="{{item.id}}" value="{{item.name}}">
+        </i-radio>
+      </view>
+    </i-radio-group>
+  </i-panel>
+  <!-- <view class="i-divider-mart">
+    <i-divider  color="#e0e0e0" lineColor="#e0e0e0">批次</i-divider>
+  </view> -->
+  <i-panel title="成绩批次">
+    <i-radio-group current="{{batchcurrent}}" bindchange="handleBatchChange">
+      <view class="class-radiogroup">
+        <i-radio wx:for="{{batch1}}" position="{{position}}" wx:key="{{item.id}}" value="{{item.name}}">
+        </i-radio>
+      </view>
+    </i-radio-group>
+  </i-panel>
+  <!-- <view class="i-divider-mart">
+        <i-divider  color="#e0e0e0" lineColor="#e0e0e0">生源地</i-divider>
+  </view> -->
+  <i-panel title="考生生源地">
+    <view style="padding: 15px;font-size:15px;">
+      <picker mode="region" bindchange="bindRegionChange" value="{{region}}">
+        {{region[0]}} > {{region[1]}} > {{region[2]}}
+      </picker>
+    </view>
+  </i-panel>
+
+  <!-- <view class="i-divider-mart">
+        <i-divider  color="#e0e0e0" lineColor="#e0e0e0">高考成绩</i-divider>
+  </view> -->
+  <i-panel title="高考成绩" >
+    <i-input value="{{ grades[0] }}" type="number"  title="语文成绩：" mode="wrapped"  />
+    <i-input value="{{ grades[1] }}" type="number"  title="数学成绩：" mode="wrapped" />
+    <i-input value="{{ grades[2] }}" type="number"  title="英语成绩：" mode="wrapped" />
+    <i-input value="{{ grades[3] }}" type="number"  title="综合成绩：" mode="wrapped" />
+  </i-panel>
+  <i-button bind:click="submitGrades" type="primary" >{{btntext}}</i-button>
+</view>
+
+<i-toast id="toast" />

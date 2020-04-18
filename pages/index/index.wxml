@@ -15,7 +15,7 @@
     </view>
     <label class="weui-search-bar__label" bindtap="showInput">
       <i class="weui-icon-search"></i>
-      <span class="weui-search-bar__text">搜索院校/专业</span>
+      <span class="weui-search-bar__text">搜索院校 / 专业</span>
     </label>
   </view>
 </view>
