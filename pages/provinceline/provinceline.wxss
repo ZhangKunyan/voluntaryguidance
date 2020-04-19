@@ -1,0 +1,4 @@
+/* pages/provinceline/provinceline.wxss */
+.picker{
+  font-size: 20rpx;
+}

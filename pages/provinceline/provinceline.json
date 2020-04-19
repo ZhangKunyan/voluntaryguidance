@@ -1,0 +1,10 @@
+{
+    "navigationBarTitleText": "各省分数线",
+  "usingComponents": {
+    "i-panel": "../../dist/panel/index",
+    "i-cell": "../../dist/cell/index",
+    "i-radio": "../../dist/radio/index",
+    "i-input": "../../dist/input/index",
+    "i-button": "../../dist/button/index"
+  }
+}
