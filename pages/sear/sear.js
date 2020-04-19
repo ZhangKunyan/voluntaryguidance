@@ -7,21 +7,38 @@ Page({
     colleges: [
       {
         name: "清华大学",
-        flags: ["985", "211", ""],
+        tags: ["985", "211", "双一流"],
         logo: "http://p3.qhimg.com/bdm/384_237_0/t01db65c4075c033b04.jpg",
       },
       {
         name: "北京大学",
-        flags: ["985", "211", ""],
-
+        tags: ["985", "211", "双一流"],
+        logo: "http://p3.qhimg.com/bdm/384_237_0/t01db65c4075c033b04.jpg",
       },
       {
-        name: "清华大学",
-        flags: ["985", "211", ""],
+        name: "同济大学",
+        tags: ["985", "211", "双一流"],
+      },
+      {
+        name: "厦门大学",
+        tags: ["985", "211", "双一流"],
 
       }
-
-    ]
+    ],
+    majorsInterpret:[
+      {
+        name:"计算机科学与技术"
+      },
+      {
+        name:"软件工程"
+      },
+      {
+        name: "通信工程"
+      },
+      {
+        name: "网络工程"
+      },
+      ] 
   },
 
   onLoad: function (options) {
@@ -42,10 +59,6 @@ Page({
           typetext = "查专业"
           type = 2;
           break; // 2--- 查专业
-        case "borderline":
-          typetext = "省份"
-          type = 3;
-          break; // 3--- 查分数线
         default:
           type = 0;
           break;

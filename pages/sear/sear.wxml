@@ -41,22 +41,20 @@
 
 <view wx:if="{{type == 1}}" >
   <block wx:for="{{colleges}}" wx:key="">
-  <view class="collegeList">
-    <image src="../../../../../Images/mytest.png"></image>
-  <view>{{item.name}}</view>
-  <view>{{item.flags}}</view>
-  </view>
-
-  
+    <view class="collegeList">
+      <image src="../../../../../Images/mytest.png"></image>
+      <view>{{item.name}}</view>
+      <view>
+          <i-tag>{{item.tags}}</i-tag>
+      </view>
+    </view> 
   </block>
 </view>
 
-
- <view wx:if="{{type == 2}}" class="majorList">
-
-</view>
-
-
- <view wx:if="{{type == 3}}">
-
+<view wx:if="{{type == 2}}">
+  <block wx:for="{{majorsInterpret}}" wx:key="">
+    <view class="majorList">
+      <view>{{item.name}}</view>
+    </view> 
+  </block>
 </view>

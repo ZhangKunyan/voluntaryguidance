@@ -7,7 +7,8 @@
     "pages/register/register",
     "pages/collection/collection",
     "pages/sear/sear",
-    "pages/myexam/myexam"
+    "pages/myexam/myexam",
+    "pages/provinceline/provinceline"
   ],
   "window": {
     "backgroundTextStyle": "light",

@@ -35,7 +35,7 @@ Page({
       {
         text: "省控线查询",
         image: "https://g.eol.cn/static/media/newgk.a8700766.svg",
-        link: "../sear/sear?type=borderline"
+        link: "../provinceline/provinceline"
       },
       {
         text: "志愿推荐",
