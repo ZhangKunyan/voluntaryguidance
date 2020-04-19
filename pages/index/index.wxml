@@ -47,7 +47,7 @@
 
 
 <view class="detail">
-  <i-card title="考生： {{mydata.name}}" extra="{{mydata.region[0]}}" wx:if="{{mydata != ''}}">
+  <i-card title="考生： {{mydata.name}}" extra="{{mydata.region}}" wx:if="{{mydata != ''}}">
     <view slot="content">
       <i-steps>
         <i-step status="finish" icon="barrage">

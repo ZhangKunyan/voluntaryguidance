@@ -26,8 +26,8 @@
   </view> -->
   <i-panel title="考生生源地">
     <view style="padding: 15px;font-size:15px;">
-      <picker mode="region" bindchange="bindRegionChange" value="{{region}}">
-        {{region[0]}} > {{region[1]}} > {{region[2]}}
+      <picker mode = "selector" range="{{provinces}}"  bindchange="bindRegionChange" value="{{region}}">
+        {{region}}
       </picker>
     </view>
   </i-panel>

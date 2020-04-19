@@ -2,3 +2,8 @@
 .picker{
   font-size: 20rpx;
 }
+.class-radiogroup{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}

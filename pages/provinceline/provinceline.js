@@ -1,7 +1,7 @@
 // pages/provinceline/provinceline.js
 Page({
   data: {
-    region: ['辽宁省'],
+    region: '辽宁',
     classcurrent: '理科',
     position: 'left',
     checked: false,
@@ -14,11 +14,12 @@ Page({
       id: 2,
       name: '理科'
     }],
-    btntext:'查询'
+    btntext:'查询',
+    provinces: ["安徽", "北京", "重庆", "福建", "甘肃", "广东", "广西", "贵州", "河北", "河南", "黑龙江", "海南", "湖南", "湖北", "吉林", "江苏", "江西", "辽宁", "内蒙古", "宁夏", "青海", "山东", "山西", "陕西", "上海", "四川", "天津", "新疆", "西藏", "云南", "浙江"]
   },
   bindRegionChange: function (e) {
     this.setData({
-      region: e.detail.value
+      region: this.data.provinces[e.detail.value]
     })
   },
   handleClassChange({ detail = {} }) {

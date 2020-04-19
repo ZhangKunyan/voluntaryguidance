@@ -39,22 +39,37 @@
   </view>
 </view>
 
-<view wx:if="{{type == 1}}" >
+<view wx:if="{{type == 1}}">
   <block wx:for="{{colleges}}" wx:key="">
-    <view class="collegeList">
-      <image src="../../../../../Images/mytest.png"></image>
-      <view>{{item.name}}</view>
-      <view>
-          <i-tag>{{item.tags}}</i-tag>
+    <view class="colleges-item" bindtap="toCollegeDetail" data-id="{{item.id}}">
+      <view class="colleges-logo">
+        <image src="{{item.logo}}"></image>
       </view>
-    </view> 
+      <view class="colleges-desces">
+        <view class="colleges-desc1">
+          <view>{{item.name}}</view>
+          <view class="colleges-tags">
+            <block wx:for="{{item.tags}}" wx:key="">
+              <i-tag color="green" wx:if="{{item == '985'}}" class="colleges-tag">{{item}}</i-tag>
+              <i-tag color="blue" wx:elif="{{item == '211'}}" class="colleges-tag">{{item}}</i-tag>
+              <i-tag color="yellow" wx:elif="{{item == '双一流'}}" class="colleges-tag">{{item}}</i-tag>
+              <i-tag color="default" type="border" wx:else class="colleges-tag">{{item}}</i-tag>
+            </block>
+          </view>
+        </view>
+        <view class="colleges-desc2">
+          预留描述
+        </view>
+      </view>
+
+    </view>
   </block>
 </view>
 
 <view wx:if="{{type == 2}}">
-  <block wx:for="{{majorsInterpret}}" wx:key="">
-    <view class="majorList">
-      <view>{{item.name}}</view>
-    </view> 
+  <block wx:for="{{majors}}" wx:key="">
+    <view class="major-item" bindtap="selectMajorType" data-index="{{index}}">
+      {{item.name}}
+    </view>
   </block>
 </view>

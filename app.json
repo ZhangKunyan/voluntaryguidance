@@ -8,7 +8,10 @@
     "pages/collection/collection",
     "pages/sear/sear",
     "pages/myexam/myexam",
-    "pages/provinceline/provinceline"
+    "pages/provinceline/provinceline",
+    "pages/collegedetail/collegedetail",
+    "pages/majorlist/majorlist",
+    "pages/majordetail/majordetail"
   ],
   "window": {
     "backgroundTextStyle": "light",

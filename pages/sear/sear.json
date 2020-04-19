@@ -1,6 +1,7 @@
 {
   "navigationBarTitleText": "搜索",
   "usingComponents": {
-    "i-tag": "../../dist/tag/index"
+    "i-tag": "../../dist/tag/index",
+    "i-action-sheet": "../../dist/action-sheet/index"
   }
 }

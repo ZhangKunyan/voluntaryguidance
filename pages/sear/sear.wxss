@@ -1,28 +1,53 @@
-/* pages/sear/sear.wxss */.searchbar-result{
-    margin-top: 0;
-    font-size: 14px;
+/* pages/sear/sear.wxss */
+
+.searchbar-result {
+  margin-top: 0;
+  font-size: 14px;
 }
-.searchbar-result .weui-cell__bd{
+
+.searchbar-result .weui-cell__bd {
   padding: 2px 0 2px 20px;
   color: var(--weui-FG-1);
 }
-.searchbar-result:before{
-    display: none;
+
+.searchbar-result:before {
+  display: none;
 }
-.collegeList{
-  height: 150rpx;
+
+.colleges-item {
   display: flex;
-  padding:20rpx;
+  flex-direction: row;
+  padding: 20rpx;
   border-bottom: 5px solid #e0e0e0;
 }
-.collegeList image{
-  height: 150rpx;
-  width: 150rpx;
-  margin:0px 50rpx;
+.colleges-logo{
+  width: 20%;
+  display: flex;
+  justify-content: center;
 }
-.majorList{
+
+.colleges-logo image {
+  height: 100rpx;
+  width: 100rpx;
+  /* margin: 0px 50rpx; */
+  border-radius: 50%;
+}
+.colleges-desces {
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+
+
+.colleges-tag {
+  margin-left: 5rpx;
+}
+
+.major-item {
   height: 100rpx;
   display: flex;
-  padding:20rpx;
+  padding: 20rpx;
   border-bottom: 5px solid #e0e0e0;
 }
