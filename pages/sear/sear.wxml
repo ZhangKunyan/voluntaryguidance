@@ -66,11 +66,16 @@
 </view>
 
 <view wx:if="{{type == 2}}">
-  <i-tabs current="{{ current }}" bindchange="handleChange">
-    <i-tab key="tab1" title="本科专业"></i-tab>
-    <i-tab key="tab2" title="专科专业"></i-tab>
+  <i-tabs current="{{ majorCurrentTab }}" bindchange="handleMajorCurrentTabChange">
+    <i-tab key="Undergraduate" title="本科专业"></i-tab>
+    <i-tab key="Specialty" title="专科专业"></i-tab>
   </i-tabs>
-  <block wx:for="{{majors}}" wx:key="">
+  <block wx:for="{{majors1}}" wx:key="" wx:if="{{majorCurrentTab == 'Undergraduate'}}">
+    <view class="major-item" bindtap="selectMajorType" data-index="{{index}}">
+      {{item.name}}
+    </view>
+  </block>
+  <block wx:for="{{majors2}}" wx:key="" wx:if="{{majorCurrentTab == 'Specialty'}}">
     <view class="major-item" bindtap="selectMajorType" data-index="{{index}}">
       {{item.name}}
     </view>

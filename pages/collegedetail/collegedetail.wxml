@@ -32,7 +32,7 @@
   <view wx:if="{{current == 'tab2'}}">
     <view class="gradeLine-pickers">
       <picker mode="selector" range="{{provinces}}" bindchange="bindRegionChange" value="{{region}}">
-        <view class="enroll-select">
+        <view class="gradeLine-select">
           <view>{{region}}</view>
           <view class="triangle1">
             <view class="triangle"></view>
@@ -40,7 +40,7 @@
         </view>
       </picker>
       <picker mode="selector" range="{{batches}}" bindchange="bindBatchChange" value="{{batch}}">
-        <view class="batch-select">
+        <view class="gradeLine-select">
           <view>{{batch}}</view>
           <view class="triangle1">
             <view class="triangle"></view>
@@ -49,7 +49,7 @@
       </picker>
 
       <picker mode="selector" range="{{years}}" bindchange="bindYearChange" value="{{year}}">
-        <view class="year-select">
+        <view class="gradeLine-select">
           <view>{{year}}</view>
           <view class="triangle1">
             <view class="triangle"></view>

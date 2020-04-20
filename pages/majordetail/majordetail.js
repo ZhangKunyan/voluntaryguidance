@@ -1,7 +1,6 @@
 // pages/majordetail/majordetail.js
 Page({
 
-
   data: {
     majorid:0,
     current: 'tab1'

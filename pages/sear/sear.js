@@ -4,7 +4,7 @@ Page({
     inputVal: "",
     typetext: "搜索",
     type: 0,
-    current: 'tab1',
+    majorCurrentTab: 'Undergraduate',
     colleges: [{
         id: 100,
         name: "清华大学",
@@ -30,8 +30,8 @@ Page({
         logo: "https://static-data.eol.cn/upload/logo/123.jpg"
       }
     ],
-    
-    majors: [{
+
+    majors1: [{
         name: "工学",
         level: 0,
         items: [{
@@ -206,16 +206,187 @@ Page({
         }]
       }
     ],
-    majorscol2: [{
-      name: "基本专业"
-    }, {
-      name: "特设专业"
-    }],
-    majorscol3: []
+    majors2: [{
+        name: "专科_工学",
+        level: 0,
+        items: [{
+          name: "电气1类",
+          level: 1,
+          items: [{
+              type: "基本专业",
+              level: 2,
+              items: [{
+                level: 3,
+                name: "电气工程及其自动化"
+              }]
+            },
+            {
+              type: "特设专业",
+              level: 2,
+              items: [{
+                level: 3,
+                name: "智能电网信息工程"
+              }, {
+                level: 3,
+                name: "光源与照明"
+              }, {
+                level: 3,
+                name: "电气工程与智能控制"
+              }]
+            }
+          ]
+        }, {
+          name: "电气2类",
+          level: 1,
+          items: [{
+              type: "基本专业",
+              level: 2,
+              items: [{
+                level: 3,
+                name: "电气工程及其自动化"
+              }]
+            },
+            {
+              type: "特设专业",
+              level: 2,
+              items: [{
+                level: 3,
+                name: "智能电网信息工程"
+              }, {
+                level: 3,
+                name: "光源与照明"
+              }, {
+                level: 3,
+                name: "电气工程与智能控制"
+              }]
+            }
+          ]
+        }, {
+          name: "电气3类",
+          level: 1,
+          items: [{
+              type: "基本专业",
+              level: 2,
+              items: [{
+                level: 3,
+                name: "电气工程及其自动化"
+              }]
+            },
+            {
+              type: "特设专业",
+              level: 2,
+              items: [{
+                level: 3,
+                name: "智能电网信息工程"
+              }, {
+                level: 3,
+                name: "光源与照明"
+              }, {
+                level: 3,
+                name: "电气工程与智能控制"
+              }]
+            }
+          ]
+        }]
+      },
+      {
+        name: "工学",
+        level: 0,
+        items: [{
+          name: "电气类",
+          level: 1,
+          items: [{
+              type: "基本专业",
+              level: 2,
+              items: [{
+                level: 3,
+                name: "电气工程及其自动化"
+              }]
+            },
+            {
+              type: "特设专业",
+              level: 2,
+              items: [{
+                level: 3,
+                name: "智能电网信息工程"
+              }, {
+                level: 3,
+                name: "光源与照明"
+              }, {
+                level: 3,
+                name: "电气工程与智能控制"
+              }]
+            }
+          ]
+        }]
+      }, {
+        name: "工学",
+        level: 0,
+        items: [{
+          name: "电气类",
+          level: 1,
+          items: [{
+              type: "基本专业",
+              level: 2,
+              items: [{
+                level: 3,
+                name: "电气工程及其自动化"
+              }]
+            },
+            {
+              type: "特设专业",
+              level: 2,
+              items: [{
+                level: 3,
+                name: "智能电网信息工程"
+              }, {
+                level: 3,
+                name: "光源与照明"
+              }, {
+                level: 3,
+                name: "电气工程与智能控制"
+              }]
+            }
+          ]
+        }]
+      }, {
+        name: "工学",
+        level: 0,
+        items: [{
+          name: "电气类",
+          level: 1,
+          items: [{
+              type: "基本专业",
+              level: 2,
+              items: [{
+                level: 3,
+                name: "电气工程及其自动化"
+              }]
+            },
+            {
+              type: "特设专业",
+              level: 2,
+              items: [{
+                level: 3,
+                name: "智能电网信息工程"
+              }, {
+                level: 3,
+                name: "光源与照明"
+              }, {
+                level: 3,
+                name: "电气工程与智能控制"
+              }]
+            }
+          ]
+        }]
+      }
+    ],
   },
-  handleChange({ detail }) {
+  handleMajorCurrentTabChange({
+    detail
+  }) {
     this.setData({
-      current: detail.key
+      majorCurrentTab: detail.key
     });
   },
   onLoad: function(options) {
@@ -244,7 +415,7 @@ Page({
 
     //如果是专业
     if (type == 2) {
-      
+
     }
 
 
@@ -262,19 +433,27 @@ Page({
     })
   },
 
-  selectMajorType:function(e){
+  selectMajorType: function(e) {
     var index = e.currentTarget.dataset.index;
-    var majors = this.data.majors
+    // majorCurrentTab: 'Undergraduate',
+    var majorCurrentTab = this.data.majorCurrentTab
+    var majors = []
+    if (majorCurrentTab == "Undergraduate") {
+      majors = this.data.majors1
+    }
+    if (majorCurrentTab == "Specialty") {
+      majors = this.data.majors2
+    }
     var selects = []
 
-    for (var i = 0; i < majors[index].items.length;i++){
+    for (var i = 0; i < majors[index].items.length; i++) {
       selects.push(majors[index].items[i].name)
     }
     wx.showActionSheet({
       itemList: selects,
       success(res) {
         wx.navigateTo({
-          url: '/pages/majorlist/majorlist?obj=' + majors[index].name + "&type=" + selects[res.tapIndex],
+          url: '/pages/majorlist/majorlist?type=' + majorCurrentTab + '&obj=' + majors[index].name + "&class=" + selects[res.tapIndex],
         })
       },
       fail(res) {
