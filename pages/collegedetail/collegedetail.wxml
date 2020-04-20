@@ -1,1 +1,66 @@
-page for college detail with college id = {{collegeid}}
+<view>
+  <block wx:for="{{colleges}}" wx:key="">
+    <view class="colleges-item" data-id="{{item.id}}">
+      <view class="colleges-logo">
+        <image src="{{item.logo}}"></image>
+      </view>
+      <view class="colleges-desces">
+        <view class="colleges-desc1">
+          <view>{{item.name}}</view>
+          <view>{{item.location}}</view>
+          <view class="colleges-tags">
+            <block wx:for="{{item.tags}}" wx:key="">
+              <i-tag color="green" wx:if="{{item == '985'}}" class="colleges-tag">{{item}}</i-tag>
+              <i-tag color="blue" wx:elif="{{item == '211'}}" class="colleges-tag">{{item}}</i-tag>
+              <i-tag color="yellow" wx:elif="{{item == '双一流'}}" class="colleges-tag">{{item}}</i-tag>
+              <i-tag color="default" type="border" wx:else class="colleges-tag">{{item}}</i-tag>
+            </block>
+          </view>
+        </view>
+      </view>
+    </view>
+  </block>
+  <i-tabs current="{{ current }}" bindchange="handleChange">
+    <i-tab key="tab1" title="简介"></i-tab>
+    <i-tab key="tab2" title="录取"></i-tab>
+    <i-tab key="tab3" title="招生"></i-tab>
+  </i-tabs>
+  <view wx:if="{{current == 'tab1'}}">
+    <!-- <rich-text nodes="{{nodes}}" bindtap="handleTextChange"></rich-text> -->
+    11111
+  </view>
+  <view wx:if="{{current == 'tab2'}}">
+    <view class="gradeLine-pickers">
+      <picker mode="selector" range="{{provinces}}" bindchange="bindRegionChange" value="{{region}}">
+        <view class="enroll-select">
+          <view>{{region}}</view>
+          <view class="triangle1">
+            <view class="triangle"></view>
+          </view>
+        </view>
+      </picker>
+      <picker mode="selector" range="{{batches}}" bindchange="bindBatchChange" value="{{batch}}">
+        <view class="batch-select">
+          <view>{{batch}}</view>
+          <view class="triangle1">
+            <view class="triangle"></view>
+          </view>
+        </view>
+      </picker>
+
+      <picker mode="selector" range="{{years}}" bindchange="bindYearChange" value="{{year}}">
+        <view class="year-select">
+          <view>{{year}}</view>
+          <view class="triangle1">
+            <view class="triangle"></view>
+          </view>
+        </view>
+      </picker>
+    </view>
+  </view>
+
+  <view wx:if="{{current == 'tab3'}}">
+    3333333
+  </view>
+
+</view>

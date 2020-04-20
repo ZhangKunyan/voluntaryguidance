@@ -68,6 +68,13 @@
 					"pathName": "pages/sear/sear",
 					"query": "type=college",
 					"scene": null
+				},
+				{
+					"id": 4,
+					"name": "pages/collegedetail/collegedetail",
+					"pathName": "pages/collegedetail/collegedetail",
+					"query": "id=100",
+					"scene": null
 				}
 			]
 		}

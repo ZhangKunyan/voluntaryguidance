@@ -1,1 +1,10 @@
-/* pages/majordetail/majordetail.wxss */
+.majorInfo{
+  height:25%;
+  width: 100%;
+  font-size: 17px;
+  border-bottom: 2px solid #e0e0e0;
+  padding: 20rpx;
+  display: flex;
+  flex-direction: row;
+}
+

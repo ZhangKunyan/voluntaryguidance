@@ -61,12 +61,15 @@
           预留描述
         </view>
       </view>
-
     </view>
   </block>
 </view>
 
 <view wx:if="{{type == 2}}">
+  <i-tabs current="{{ current }}" bindchange="handleChange">
+    <i-tab key="tab1" title="本科专业"></i-tab>
+    <i-tab key="tab2" title="专科专业"></i-tab>
+  </i-tabs>
   <block wx:for="{{majors}}" wx:key="">
     <view class="major-item" bindtap="selectMajorType" data-index="{{index}}">
       {{item.name}}

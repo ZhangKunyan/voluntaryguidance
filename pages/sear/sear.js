@@ -4,6 +4,7 @@ Page({
     inputVal: "",
     typetext: "搜索",
     type: 0,
+    current: 'tab1',
     colleges: [{
         id: 100,
         name: "清华大学",
@@ -212,7 +213,11 @@ Page({
     }],
     majorscol3: []
   },
-
+  handleChange({ detail }) {
+    this.setData({
+      current: detail.key
+    });
+  },
   onLoad: function(options) {
     var type = 0;
     var typetext = "搜索"
