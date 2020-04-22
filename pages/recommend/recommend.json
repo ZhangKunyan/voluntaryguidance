@@ -1,0 +1,11 @@
+{
+  "navigationBarTitleText": "志愿推荐",
+  "usingComponents": {
+        "i-tabs": "../../dist/tabs/index",
+        "i-tab": "../../dist/tab/index",
+        "i-panel": "../../dist/panel/index",
+        "i-radio-group": "../../dist/radio-group/index",
+        "i-radio": "../../dist/radio/index",
+        "i-button": "../../dist/button/index"
+  }
+}

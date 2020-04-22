@@ -1,0 +1,35 @@
+<i-tabs current="{{ current }}" bindchange="handleChange">
+  <i-tab key="tab1" title="按分数推荐"></i-tab>
+  <i-tab key="tab2" title="MBTI测试"></i-tab>
+</i-tabs>
+<view wx:if="{{current == 'tab1'}}">
+  <i-panel title="生源:">
+    <view style="padding: 15px;font-size:15px;">
+      <picker mode="selector" range="{{provinces}}" bindchange="bindRegionChange" value="{{region}}">
+        {{region}}
+      </picker>
+    </view>
+  </i-panel>
+
+  <i-panel title="科类:">
+    <i-radio-group current="{{classcurrent}}" bindchange="handleClassChange">
+      <view class="class-radiogroup">
+        <i-radio wx:for="{{class1}}" position="{{position}}" wx:key="{{item.id}}" value="{{item.name}}">
+        </i-radio>
+      </view>
+    </i-radio-group>
+  </i-panel>
+
+  <i-panel title="考分:"></i-panel>
+    <view class="input1">
+  <input class="userGrade" placeholder="请输入考分" type="number" value="{{userGrade}}" bindinput="inputChangeHandle"></input>
+    </view>
+
+  <view>
+  <i-button bind:click="submitInfo" type="primary">{{btntext}}</i-button>
+  </view>
+</view>
+
+<view wx:if="{{current==tab2}}">
+  123456
+</view>

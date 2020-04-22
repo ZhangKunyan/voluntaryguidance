@@ -11,7 +11,8 @@
     "pages/provinceline/provinceline",
     "pages/collegedetail/collegedetail",
     "pages/majorlist/majorlist",
-    "pages/majordetail/majordetail"
+    "pages/majordetail/majordetail",
+    "pages/recommend/recommend"
   ],
   "window": {
     "backgroundTextStyle": "light",

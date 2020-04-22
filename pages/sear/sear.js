@@ -32,10 +32,10 @@ Page({
     ],
 
     majors1: [{
-        name: "工学",
+        name: "经济学",
         level: 0,
         items: [{
-          name: "电气1类",
+          name: "经济学类",
           level: 1,
           items: [{
               type: "基本专业",
@@ -61,7 +61,7 @@ Page({
             }
           ]
         }, {
-          name: "电气2类",
+          name: "财政学类",
           level: 1,
           items: [{
               type: "基本专业",
@@ -87,7 +87,7 @@ Page({
             }
           ]
         }, {
-          name: "电气3类",
+          name: "金融学类",
           level: 1,
           items: [{
               type: "基本专业",
@@ -115,10 +115,66 @@ Page({
         }]
       },
       {
-        name: "工学",
+        name: "哲学",
         level: 0,
         items: [{
-          name: "电气类",
+          name: "哲学类",
+          level: 1,
+          items: [{
+              type: "基本专业",
+              level: 2,
+              items: [{
+                level: 3,
+                name: "电气工程及其自动化"
+              }]
+            },
+            {
+              type: "特设专业",
+              level: 2,
+              items: [{
+                level: 3,
+                name: "智能电网信息工程"
+              }, {
+                level: 3,
+                name: "光源与照明"
+              }, {
+                level: 3,
+                name: "电气工程与智能控制"
+              }]
+            }
+          ]
+        }]
+      }, {
+        name: "教育学",
+        level: 0,
+        items: [{
+          name: "体育学类",
+          level: 1,
+          items: [{
+              type: "基本专业",
+              level: 2,
+              items: [{
+                level: 3,
+                name: "电气工程及其自动化"
+              }]
+            },
+            {
+              type: "特设专业",
+              level: 2,
+              items: [{
+                level: 3,
+                name: "智能电网信息工程"
+              }, {
+                level: 3,
+                name: "光源与照明"
+              }, {
+                level: 3,
+                name: "电气工程与智能控制"
+              }]
+            }
+          ]
+        }, {
+          name: "教育学类",
           level: 1,
           items: [{
               type: "基本专业",
@@ -148,37 +204,7 @@ Page({
         name: "工学",
         level: 0,
         items: [{
-          name: "电气类",
-          level: 1,
-          items: [{
-              type: "基本专业",
-              level: 2,
-              items: [{
-                level: 3,
-                name: "电气工程及其自动化"
-              }]
-            },
-            {
-              type: "特设专业",
-              level: 2,
-              items: [{
-                level: 3,
-                name: "智能电网信息工程"
-              }, {
-                level: 3,
-                name: "光源与照明"
-              }, {
-                level: 3,
-                name: "电气工程与智能控制"
-              }]
-            }
-          ]
-        }]
-      }, {
-        name: "工学",
-        level: 0,
-        items: [{
-          name: "电气类",
+          name: "力学类",
           level: 1,
           items: [{
               type: "基本专业",
@@ -207,10 +233,10 @@ Page({
       }
     ],
     majors2: [{
-        name: "专科_工学",
+        name: "电子信息大类",
         level: 0,
         items: [{
-          name: "电气1类",
+          name: "计算机类",
           level: 1,
           items: [{
               type: "基本专业",
@@ -236,7 +262,7 @@ Page({
             }
           ]
         }, {
-          name: "电气2类",
+          name: "通信类",
           level: 1,
           items: [{
               type: "基本专业",
@@ -262,7 +288,7 @@ Page({
             }
           ]
         }, {
-          name: "电气3类",
+          name: "电子信息类",
           level: 1,
           items: [{
               type: "基本专业",
@@ -290,10 +316,66 @@ Page({
         }]
       },
       {
-        name: "工学",
+        name: "新闻传播大学",
         level: 0,
         items: [{
-          name: "电气类",
+          name: "新闻出版类",
+          level: 1,
+          items: [{
+              type: "基本专业",
+              level: 2,
+              items: [{
+                level: 3,
+                name: "电气工程及其自动化"
+              }]
+            },
+            {
+              type: "特设专业",
+              level: 2,
+              items: [{
+                level: 3,
+                name: "智能电网信息工程"
+              }, {
+                level: 3,
+                name: "光源与照明"
+              }, {
+                level: 3,
+                name: "电气工程与智能控制"
+              }]
+            }
+          ]
+        },{
+            name: "广播影视类",
+            level: 1,
+            items: [{
+              type: "基本专业",
+              level: 2,
+              items: [{
+                level: 3,
+                name: "电气工程及其自动化"
+              }]
+            },
+            {
+              type: "特设专业",
+              level: 2,
+              items: [{
+                level: 3,
+                name: "智能电网信息工程"
+              }, {
+                level: 3,
+                name: "光源与照明"
+              }, {
+                level: 3,
+                name: "电气工程与智能控制"
+              }]
+            }
+            ]
+          }]
+      }, {
+        name: "教育与体育大类",
+        level: 0,
+        items: [{
+          name: "语言类",
           level: 1,
           items: [{
               type: "基本专业",
@@ -320,40 +402,10 @@ Page({
           ]
         }]
       }, {
-        name: "工学",
+        name: "土木建筑大类",
         level: 0,
         items: [{
-          name: "电气类",
-          level: 1,
-          items: [{
-              type: "基本专业",
-              level: 2,
-              items: [{
-                level: 3,
-                name: "电气工程及其自动化"
-              }]
-            },
-            {
-              type: "特设专业",
-              level: 2,
-              items: [{
-                level: 3,
-                name: "智能电网信息工程"
-              }, {
-                level: 3,
-                name: "光源与照明"
-              }, {
-                level: 3,
-                name: "电气工程与智能控制"
-              }]
-            }
-          ]
-        }]
-      }, {
-        name: "工学",
-        level: 0,
-        items: [{
-          name: "电气类",
+          name: "建筑设计类",
           level: 1,
           items: [{
               type: "基本专业",
