@@ -1,7 +1,100 @@
-Page({
+import * as echarts from '../../ec-canvas/echarts';
 
+const app = getApp();
+
+function initChart(canvas, width, height, dpr) {
+
+  //从缓存获取mbti考试结果
+  var mbti = wx.getStorageSync("mbti")
+
+  var queue = []
+  if (mbti) {
+    var res = mbti.res
+    if (res) {
+      queue.push((res.E) / (res.E + res.I) * 100)
+      queue.push((res.S) / (res.S + res.N) * 100)
+      queue.push((res.T) / (res.T + res.F) * 100)
+      queue.push((res.J) / (res.J + res.P) * 100)
+      queue.push((res.I) / (res.E + res.I) * 100)
+      queue.push((res.N) / (res.S + res.N) * 100)
+      queue.push((res.F) / (res.T + res.F) * 100)
+      queue.push((res.P) / (res.J + res.P) * 100)
+    }
+    console.log(queue)
+  }
+
+  const chart = echarts.init(canvas, null, {
+    width: width,
+    height: height,
+    devicePixelRatio: dpr // new
+  });
+  canvas.setChart(chart);
+
+  var option = {
+    backgroundColor: "#ffffff",
+    color: ["#37A2DA", "#FF9F7F"],
+    xAxis: {
+      show: false
+    },
+    yAxis: {
+      show: false
+    },
+    radar: {
+      // shape: 'circle',
+      indicator: [{
+          name: '外向(E)',
+          max: 100
+        },
+        {
+          name: '感觉(S)',
+          max: 100
+        },
+        {
+          name: '思考(T)',
+          max: 100
+        }, {
+          name: '判断(J)',
+          max: 100
+        },
+        {
+          name: '内向(I)',
+          max: 100
+        },
+        {
+          name: '直觉(N)',
+          max: 100
+        },
+        {
+          name: '情感(F)',
+          max: 100
+        },
+        {
+          name: '感知(P)',
+          max: 100
+        }
+      ]
+    },
+    series: [{
+      name: '预算 vs 开销',
+      type: 'radar',
+      data: [{
+        value: queue,
+        name: ' '
+      }]
+    }]
+  };
+
+  chart.setOption(option);
+  return chart;
+}
+
+Page({
   data: {
-    btntext:"分析性格",
+    ec: {
+      onInit: initChart
+    },
+    rescurrent: "probably",
+    btntext: "分析性格",
     qlibrary: [{
         ques: "当你要外出一整天，你会",
         options: [{
@@ -51,44 +144,61 @@ Page({
     ],
     //E,I,S,N,T,F,J,P
     chooses: {
-      E: 1,
-      I: 2,
-      S: 3,
-      N: 4,
-      T: 5,
-      F: 6,
-      J: 1,
-      P: 10,
+      E:0,
+      I:0,
+      S:0,
+      N:0,
+      T:0,
+      F:0,
+      J:0,
+      P:0,
     },
-    current: 0
+    current: 0,
+    type:""
   },
-  submitTest: function () {
-    //todo: submitGrades
-    //这里暂时存储在缓存里
-    var mydata = {
-      class: this.data.classcurrent,
-      region: this.data.region,
-      grades: this.data.grades,
-    }
-    wx.setStorageSync("data", mydata)
-    $Toast({
-      content: '提交成功',
-      type: 'success'
-    });
-    setTimeout(() => {
-      $Toast.hide();
-      wx.navigateBack({
-        delta: 1
-      })
-    }, 1000);
-
+  submitTest: function() {
+    wx.redirectTo({
+      url: '../mbtidetail/mbtidetail?type='+this.data.type
+    })
   },
   answer: function(e) {
     var chooses = this.data.chooses;
     chooses[e.currentTarget.dataset.weight]++;
+    var current = this.data.current + 1;
     this.setData({
-      current: this.data.current + 1,
+      current: current,
       chooses: chooses
     })
+
+    //当是最后一答时，把结果存到缓存
+    var quesLength = this.data.qlibrary.length
+
+    if (current == quesLength) {
+      this.getRes()
+    }
+  },
+  getRes(){
+
+    var chooses = this.data.chooses;
+    var type = "";
+    type = chooses.E >= chooses.I ? type + "E" : type + "I"
+    type = chooses.S >= chooses.N ? type + "S" : type + "N"
+    type = chooses.T >= chooses.F ? type + "T" : type + "F"
+    type = chooses.J >= chooses.P ? type + "J" : type + "P"
+    this.setData({
+      type: type
+    })
+    wx.setStorageSync("mbti", {
+      res: chooses,
+      type: type
+    })
+  },
+
+  changeResCurrent({
+    detail
+  }) {
+    this.setData({
+      rescurrent: detail.key
+    });
   }
 })

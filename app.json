@@ -13,7 +13,8 @@
     "pages/majorlist/majorlist",
     "pages/majordetail/majordetail",
     "pages/recommend/recommend",
-    "pages/mbtitest/mbtitest"
+    "pages/mbtitest/mbtitest",
+    "pages/mbtidetail/mbtidetail"
   ],
   "window": {
     "backgroundTextStyle": "light",

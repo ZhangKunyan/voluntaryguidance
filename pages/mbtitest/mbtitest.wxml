@@ -8,55 +8,70 @@
 </view>
 
 <view class="result" wx:if="{{qlibrary.length<=current}}">
-  <i-panel title="精力（Energy）来源">
-    <view class="progress-items">
-      <view class="progress-item">
-        <view class="text">外向(E)</view>
-        <i-progress percent="{{chooses.E/(chooses.E+chooses.I)*100}}"></i-progress>
+
+  <i-tabs current="{{ rescurrent }}" bindchange="changeResCurrent">
+    <i-tab key="probably" title="概览报告"></i-tab>
+    <i-tab key="detailed" title="详细报告"></i-tab>
+  </i-tabs>
+  <view wx:if="{{rescurrent=='detailed'}}">
+    <i-panel title="注意力所在和精力的来源">
+      <view class="progress-items">
+        <view class="progress-item">
+          <view class="text">外向(E)</view>
+          <i-progress percent="{{chooses.E/(chooses.E+chooses.I)*100}}" status="active"></i-progress>
+        </view>
+        <view class="progress-item">
+          <view class="text">内向(I)</view>
+          <i-progress percent="{{chooses.I/(chooses.E+chooses.I)*100}}" status="success"></i-progress>
+        </view>
       </view>
-      <view class="progress-item">
-        <view class="text">内向(I)</view>
-        <i-progress percent="{{chooses.E/(chooses.E+chooses.I)*100}}"></i-progress>
+    </i-panel>
+    <i-panel title="作决策的方式判断事物">
+      <view class="progress-items">
+        <view class="progress-item">
+          <view class="text">感觉(S)</view>
+          <i-progress percent="{{chooses.S/(chooses.S+chooses.N)*100}}" status="active"></i-progress>
+        </view>
+        <view class="progress-item">
+          <view class="text">直觉(N)</view>
+          <i-progress percent="{{chooses.N/(chooses.S+chooses.N)*100}}" status="success"></i-progress>
+        </view>
       </view>
+    </i-panel>
+    <i-panel title="对待外界和处世的方式">
+      <view class="progress-items">
+        <view class="progress-item">
+          <view class="text">思考(T)</view>
+          <i-progress percent="{{chooses.T/(chooses.T+chooses.F)*100}}" status="active"></i-progress>
+        </view>
+        <view class="progress-item">
+          <view class="text">情感(F)</view>
+          <i-progress percent="{{chooses.F/(chooses.T+chooses.F)*100}}" status="success"></i-progress>
+        </view>
+      </view>
+    </i-panel>
+    <i-panel title="对待外界和处世的方式">
+      <view class="progress-items">
+        <view class="progress-item">
+          <view class="text">判断(J)</view>
+          <i-progress percent="{{chooses.J/(chooses.J+chooses.P)*100}}" status="active"></i-progress>
+        </view>
+        <view class="progress-item">
+          <view class="text">感知(P)</view>
+          <i-progress percent="{{chooses.P/(chooses.J+chooses.P)*100}}" status="success"></i-progress>
+        </view>
+        <view>
+            <view class="res-text">您的性格模型为：{{type}}</view>
+          <i-button bind:click="submitTest" type="primary">{{btntext}}</i-button>
+        </view>
+      </view>
+    </i-panel>
+  </view>
+  <view wx:if="{{rescurrent=='probably'}}">
+    <view class="chart">
+      <ec-canvas id="mychart-dom-graph" canvas-id="mychart-graph" ec="{{ ec }}"></ec-canvas>
     </view>
-  </i-panel>
-  <i-panel title="用脑偏好">
-    <view class="progress-items">
-      <view class="progress-item">
-        <view class="text">感觉(S)</view>
-        <i-progress percent="{{chooses.E/(chooses.E+chooses.I)*100}}"></i-progress>
-      </view>
-      <view class="progress-item">
-        <view class="text">直觉(N)</view>
-        <i-progress percent="{{chooses.E/(chooses.E+chooses.I)*100}}"></i-progress>
-      </view>
-    </view>
-  </i-panel>
-  <i-panel title="用脑偏好">
-    <view class="progress-items">
-      <view class="progress-item">
-        <view class="text">思考(T)</view>
-        <i-progress percent="{{chooses.E/(chooses.E+chooses.I)*100}}"></i-progress>
-      </view>
-      <view class="progress-item">
-        <view class="text">情感(F)</view>
-        <i-progress percent="{{chooses.E/(chooses.E+chooses.I)*100}}"></i-progress>
-      </view>
-    </view>
-  </i-panel>
-  <i-panel title="生活方式（Life Style）">
-    <view class="progress-items">
-      <view class="progress-item">
-        <view class="text">判断(J)</view>
-        <i-progress percent="{{chooses.E/(chooses.E+chooses.I)*100}}"></i-progress>
-      </view>
-      <view class="progress-item">
-        <view class="text">感知(P)</view>
-        <i-progress percent="{{chooses.E/(chooses.E+chooses.I)*100}}"></i-progress>
-      </view>
-      <view>
-        <i-button bind:click="submitTest" type="primary">{{btntext}}</i-button>
-      </view>
-    </view>
-  </i-panel>
+    <view class="res-text">您的性格模型为：{{type}}</view>
+  </view>
+
 </view>

@@ -1,8 +1,13 @@
 {
+    "navigationBarTitleText": "MBTI测试",
   "usingComponents": {
     "i-button": "../../dist/button/index",
       "i-page": "../../dist/page/index",
       "i-panel": "../../dist/panel/index",
-        "i-progress": "../../dist/progress/index"
+        "i-progress": "../../dist/progress/index",
+        "ec-canvas": "../../ec-canvas/ec-canvas",
+        "i-tabs": "../../dist/tabs/index",
+        "i-tab": "../../dist/tab/index"
+
   }
 }

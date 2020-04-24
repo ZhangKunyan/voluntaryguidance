@@ -1,0 +1,7 @@
+<!--pages/mbtidetail/mbtidetail.wxml-->
+<view>此处处理性格模型为 {{type}} 的 详细内容 和 专业介绍</view> 
+<br/>
+<view>你自己设计界面和编写逻辑</view>
+<br/>
+<br/>
+<view>让用户选择自己感兴趣的专业 然后存入缓存</view>
