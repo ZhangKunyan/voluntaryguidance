@@ -4,11 +4,23 @@
 		"ignore": []
 	},
 	"setting": {
-		"urlCheck": true,
+		"urlCheck": false,
 		"es6": true,
 		"postcss": true,
 		"minified": true,
-		"newFeature": true
+		"newFeature": true,
+		"coverView": true,
+		"autoAudits": false,
+		"showShadowRootInWxmlPanel": true,
+		"scopeDataCheck": false,
+		"checkInvalidKey": true,
+		"checkSiteMap": true,
+		"uploadWithSourceMap": true,
+		"babelSetting": {
+			"ignore": [],
+			"disablePlugins": [],
+			"outputPath": ""
+		}
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.10.4",
@@ -81,6 +93,12 @@
 					"name": "pages/recommend/recommend",
 					"pathName": "pages/recommend/recommend",
 					"query": "type=college",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/mbtitest/mbtitest",
+					"pathName": "pages/mbtitest/mbtitest",
 					"scene": null
 				}
 			]

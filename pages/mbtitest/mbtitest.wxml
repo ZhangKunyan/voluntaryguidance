@@ -1,6 +1,6 @@
 <view wx:if="{{qlibrary.length>current}}">
   <view class="ques">
-    {{qlibrary[current].ques}}
+    ·{{qlibrary[current].ques}}_________
   </view>
   <block wx:for="{{qlibrary[current].options}}" wx:key="">
     <i-button bind:click="answer" type="primary" data-weight="{{item.weight}}">{{item.text}} </i-button>
@@ -20,39 +20,42 @@
       </view>
     </view>
   </i-panel>
-  <i-panel title="精力（Energy）来源">
+  <i-panel title="用脑偏好">
     <view class="progress-items">
       <view class="progress-item">
-        <view class="text">外向(E)</view>
+        <view class="text">感觉(S)</view>
         <i-progress percent="{{chooses.E/(chooses.E+chooses.I)*100}}"></i-progress>
       </view>
       <view class="progress-item">
-        <view class="text">内向(I)</view>
+        <view class="text">直觉(N)</view>
         <i-progress percent="{{chooses.E/(chooses.E+chooses.I)*100}}"></i-progress>
       </view>
     </view>
   </i-panel>
-  <i-panel title="精力（Energy）来源">
+  <i-panel title="用脑偏好">
     <view class="progress-items">
       <view class="progress-item">
-        <view class="text">外向(E)</view>
+        <view class="text">思考(T)</view>
         <i-progress percent="{{chooses.E/(chooses.E+chooses.I)*100}}"></i-progress>
       </view>
       <view class="progress-item">
-        <view class="text">内向(I)</view>
+        <view class="text">情感(F)</view>
         <i-progress percent="{{chooses.E/(chooses.E+chooses.I)*100}}"></i-progress>
       </view>
     </view>
   </i-panel>
-  <i-panel title="精力（Energy）来源">
+  <i-panel title="生活方式（Life Style）">
     <view class="progress-items">
       <view class="progress-item">
-        <view class="text">外向(E)</view>
+        <view class="text">判断(J)</view>
         <i-progress percent="{{chooses.E/(chooses.E+chooses.I)*100}}"></i-progress>
       </view>
       <view class="progress-item">
-        <view class="text">内向(I)</view>
+        <view class="text">感知(P)</view>
         <i-progress percent="{{chooses.E/(chooses.E+chooses.I)*100}}"></i-progress>
+      </view>
+      <view>
+        <i-button bind:click="submitTest" type="primary">{{btntext}}</i-button>
       </view>
     </view>
   </i-panel>

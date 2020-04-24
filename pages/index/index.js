@@ -22,9 +22,9 @@ Page({
       image: "https://g.eol.cn/static/media/major.008819a9.svg",
         link: "../myexam/myexam"
       },
-       {
+      {
         text: "专业解读",
-        image: "https://g.eol.cn/static/media/major.008819a9.svg",
+        image: "../../../../../Images/voluntary.png",
          link: "../sear/sear?type=major"
       },
        {
@@ -49,7 +49,7 @@ Page({
       }
     ],
   },
-
+  
   onShow: function(options) {
     var _this=this;
     //首页获取用户信息 看是否记录

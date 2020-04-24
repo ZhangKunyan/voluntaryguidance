@@ -1,6 +1,7 @@
 Page({
 
   data: {
+    btntext:"分析性格",
     qlibrary: [{
         ques: "当你要外出一整天，你会",
         options: [{
@@ -59,7 +60,28 @@ Page({
       J: 1,
       P: 10,
     },
-    current: 10
+    current: 0
+  },
+  submitTest: function () {
+    //todo: submitGrades
+    //这里暂时存储在缓存里
+    var mydata = {
+      class: this.data.classcurrent,
+      region: this.data.region,
+      grades: this.data.grades,
+    }
+    wx.setStorageSync("data", mydata)
+    $Toast({
+      content: '提交成功',
+      type: 'success'
+    });
+    setTimeout(() => {
+      $Toast.hide();
+      wx.navigateBack({
+        delta: 1
+      })
+    }, 1000);
+
   },
   answer: function(e) {
     var chooses = this.data.chooses;
