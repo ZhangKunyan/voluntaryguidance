@@ -12,7 +12,8 @@
     "pages/collegedetail/collegedetail",
     "pages/majorlist/majorlist",
     "pages/majordetail/majordetail",
-    "pages/recommend/recommend"
+    "pages/recommend/recommend",
+    "pages/mbtitest/mbtitest"
   ],
   "window": {
     "backgroundTextStyle": "light",

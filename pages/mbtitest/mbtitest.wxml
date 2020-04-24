@@ -1,0 +1,59 @@
+<view wx:if="{{qlibrary.length>current}}">
+  <view class="ques">
+    {{qlibrary[current].ques}}
+  </view>
+  <block wx:for="{{qlibrary[current].options}}" wx:key="">
+    <i-button bind:click="answer" type="primary" data-weight="{{item.weight}}">{{item.text}} </i-button>
+  </block>
+</view>
+
+<view class="result" wx:if="{{qlibrary.length<=current}}">
+  <i-panel title="精力（Energy）来源">
+    <view class="progress-items">
+      <view class="progress-item">
+        <view class="text">外向(E)</view>
+        <i-progress percent="{{chooses.E/(chooses.E+chooses.I)*100}}"></i-progress>
+      </view>
+      <view class="progress-item">
+        <view class="text">内向(I)</view>
+        <i-progress percent="{{chooses.E/(chooses.E+chooses.I)*100}}"></i-progress>
+      </view>
+    </view>
+  </i-panel>
+  <i-panel title="精力（Energy）来源">
+    <view class="progress-items">
+      <view class="progress-item">
+        <view class="text">外向(E)</view>
+        <i-progress percent="{{chooses.E/(chooses.E+chooses.I)*100}}"></i-progress>
+      </view>
+      <view class="progress-item">
+        <view class="text">内向(I)</view>
+        <i-progress percent="{{chooses.E/(chooses.E+chooses.I)*100}}"></i-progress>
+      </view>
+    </view>
+  </i-panel>
+  <i-panel title="精力（Energy）来源">
+    <view class="progress-items">
+      <view class="progress-item">
+        <view class="text">外向(E)</view>
+        <i-progress percent="{{chooses.E/(chooses.E+chooses.I)*100}}"></i-progress>
+      </view>
+      <view class="progress-item">
+        <view class="text">内向(I)</view>
+        <i-progress percent="{{chooses.E/(chooses.E+chooses.I)*100}}"></i-progress>
+      </view>
+    </view>
+  </i-panel>
+  <i-panel title="精力（Energy）来源">
+    <view class="progress-items">
+      <view class="progress-item">
+        <view class="text">外向(E)</view>
+        <i-progress percent="{{chooses.E/(chooses.E+chooses.I)*100}}"></i-progress>
+      </view>
+      <view class="progress-item">
+        <view class="text">内向(I)</view>
+        <i-progress percent="{{chooses.E/(chooses.E+chooses.I)*100}}"></i-progress>
+      </view>
+    </view>
+  </i-panel>
+</view>

@@ -1,4 +1,7 @@
 // pages/recommend/recommend.js
+const { $Toast } = require('../../dist/base/index');
+
+
 Page({
 
   /**

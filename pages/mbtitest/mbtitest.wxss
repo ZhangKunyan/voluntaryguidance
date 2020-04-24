@@ -1,0 +1,13 @@
+.ques{
+  margin-top: 30rpx;
+  margin-bottom: 100rpx;
+  font-size: 40rpx;
+  width: 96%;
+  margin-left: 2%;
+}
+
+.progress-items{
+  width: 80%;
+  margin-left: 10%;
+}
+

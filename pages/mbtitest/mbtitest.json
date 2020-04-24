@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "i-button": "../../dist/button/index",
+      "i-page": "../../dist/page/index",
+      "i-panel": "../../dist/panel/index",
+        "i-progress": "../../dist/progress/index"
+  }
+}

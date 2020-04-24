@@ -43,9 +43,9 @@ Page({
         link: "../recommend/recommend"
       },
       {
-        text: "测评",
-        image: "https://g.eol.cn/static/media/major.008819a9.svg",
-        link: "../collection/collection"
+        text: "MBTI测试",
+        image: "https://tse1-mm.cn.bing.net/th/id/OIP.VnZH_isMruHaPdz2dyAXaAAAAA?w=216&h=206&c=7&o=5&pid=1.7",
+        link: "../mbtitest/mbtitest"
       }
     ],
   },

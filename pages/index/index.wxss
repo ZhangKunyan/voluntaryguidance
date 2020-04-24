@@ -31,8 +31,10 @@
 }
 
 .grid-item image {
+  margin-top: 10rpx;
   width: 100rpx;
-  height: 120rpx;
+  height: 100rpx;
+  border-radius: 50%;
 }
 
 .detail {
