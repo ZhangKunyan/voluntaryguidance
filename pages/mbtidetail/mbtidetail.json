@@ -1,4 +1,7 @@
 {
       "navigationBarTitleText": "MBTI测试结果",
-  "usingComponents": {}
+  "usingComponents": {
+    "i-button": "../../dist/button/index",
+    "i-panel": "../../dist/panel/index"
+  }
 }

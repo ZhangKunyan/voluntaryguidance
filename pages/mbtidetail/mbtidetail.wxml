@@ -1,7 +1,19 @@
 <!--pages/mbtidetail/mbtidetail.wxml-->
-<view>此处处理性格模型为 {{type}} 的 详细内容 和 专业介绍</view> 
+<view class="testAnswer">您的性格分析结果为{{type}}：</view> 
 <br/>
-<view>你自己设计界面和编写逻辑</view>
+<view class="result">
+{{res[type].text}}
+</view>
 <br/>
 <br/>
-<view>让用户选择自己感兴趣的专业 然后存入缓存</view>
+<view class="testAnswer">点击选择感兴趣的专业：</view>
+<br/>
+<view class="btn_choose">
+  <block wx:for="{{tagArry}}">
+    <view class='label_view{{item.selected?"active":""}}' data-value="{{item.name}}" bindtap="dealTap" checked="item.selected" data-index="{{index}}">{{item.name}}</view>
+  </block>
+  <van-popup show="{{show}}" bind:close="onClose" close-on-click-overlay="{{false}}" overlay="false"></van-popup>
+</view>
+<view>
+  <i-button bind:click="submitTest" type="primary">{{btntext}}</i-button>
+</view>
