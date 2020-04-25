@@ -1,19 +1,23 @@
 <!--pages/mbtidetail/mbtidetail.wxml-->
-<view class="testAnswer">您的性格分析结果为{{type}}：</view> 
-<br/>
-<view class="result">
-{{res[type].text}}
-</view>
-<br/>
-<br/>
-<view class="testAnswer">点击选择感兴趣的专业：</view>
-<br/>
-<view class="btn_choose">
-  <block wx:for="{{tagArry}}">
-    <view class='label_view{{item.selected?"active":""}}' data-value="{{item.name}}" bindtap="dealTap" checked="item.selected" data-index="{{index}}">{{item.name}}</view>
-  </block>
-  <van-popup show="{{show}}" bind:close="onClose" close-on-click-overlay="{{false}}" overlay="false"></van-popup>
-</view>
-<view>
-  <i-button bind:click="submitTest" type="primary">{{btntext}}</i-button>
-</view>
+<i-panel title="性格分析报告">
+  <view style="padding: 15px;">您的性格分析结果为
+    <i-tag class="i-tags" type="border" color="red">
+      {{type}}
+    </i-tag>
+  </view>
+  <view class="result" style="padding: 15px;">
+    {{res[type].text}}
+  </view>
+</i-panel>
+<i-panel title="你可能喜欢的专业">
+  <view style="padding: 15px;">
+    <i-panel title="">
+      <i-checkbox-group current="{{majorsSelected}}" bindchange="selectLikeMajors">
+        <i-checkbox wx:for="{{res[type].majors}}" position="left" wx:key="{{item}}" value="{{item}}">
+        </i-checkbox>
+      </i-checkbox-group>
+
+      <i-button bind:click="submit" type="primary">我选好啦</i-button>
+    </i-panel>
+  </view>
+</i-panel>
