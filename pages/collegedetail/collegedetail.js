@@ -3,8 +3,8 @@ Page({
 
 
   data: {
-    collegeid:0,
-    current:'tab2',
+    collegeid: 0,
+    current: 'tab2',
     colleges: [{
       id: 100,
       name: "清华大学",
@@ -13,16 +13,16 @@ Page({
       logo: "https://static-data.eol.cn/upload/logo/140.jpg",
     }],
     region: "北京",
-    batch:"理科",
-    year:"2019",
+    batch: "理科",
+    year: "2019",
     provinces: ["安徽", "北京", "重庆", "福建", "甘肃", "广东", "广西", "贵州", "河北", "河南", "黑龙江", "海南", "湖南", "湖北", "吉林", "江苏", "江西", "辽宁", "内蒙古", "宁夏", "青海", "山东", "山西", "陕西", "上海", "四川", "天津", "新疆", "西藏", "云南", "浙江"],
-    batches:["文科","理科"],
-    years:["2014","2015","2016","2017","2018","2019"]
+    batches: ["文科", "理科"],
+    years: ["2014", "2015", "2016", "2017", "2018", "2019"]
   },
-  handleTextChange(){
+  handleTextChange() {
     console.log('tap')
   },
-  handleChange({ detail }){
+  handleChange({ detail }) {
     this.setData({
       current: detail.key
     })
@@ -47,8 +47,23 @@ Page({
    */
   onLoad: function (options) {
     console.log(options)
+    var that = this;
     this.setData({
       collegeid: options.id
     })
+
+    wx.request({
+      url: 'http://localhost/college/getcollegesDetail/' + options.id,
+      success(res) {
+        console.log(res.data)
+        var colleges = that.data.colleges;
+        colleges[0]["name"] = res.data.name
+        that.setData({
+          colleges: colleges
+        })
+      }
+    })
+
+
   }
 })

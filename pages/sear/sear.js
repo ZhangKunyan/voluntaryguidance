@@ -5,434 +5,17 @@ Page({
     typetext: "搜索",
     type: 0,
     majorCurrentTab: 'Undergraduate',
-    colleges: [{
-        id: 100,
-        name: "清华大学",
-        tags: ["985", "211", "双一流", "综合类"],
-        logo: "https://static-data.eol.cn/upload/logo/140.jpg",
-      },
-      {
-        id: 101,
-        name: "北京大学",
-        tags: ["985", "211", "双一流", "文学类"],
-        logo: "https://static-data.eol.cn/upload/logo/31.jpg",
-      },
-      {
-        id: 102,
-        name: "浙江大学",
-        tags: ["985", ],
-        logo: "https://static-data.eol.cn/upload/logo/114.jpg"
-      },
-      {
-        id: 103,
-        name: "中南大学",
-        tags: ["985", "211"],
-        logo: "https://static-data.eol.cn/upload/logo/123.jpg"
-      }
+    colleges: [
+      //   {
+      //     id: 100,
+      //     name: "清华大学",
+      //     tags: ["985", "211", "双一流", "综合类"],
+      //     logo: "https://static-data.eol.cn/upload/logo/140.jpg",
+      //   },
     ],
 
-    majors1: [{
-        name: "经济学",
-        level: 0,
-        items: [{
-          name: "经济学类",
-          level: 1,
-          items: [{
-              type: "基本专业",
-              level: 2,
-              items: [{
-                level: 3,
-                name: "电气工程及其自动化"
-              }]
-            },
-            {
-              type: "特设专业",
-              level: 2,
-              items: [{
-                level: 3,
-                name: "智能电网信息工程"
-              }, {
-                level: 3,
-                name: "光源与照明"
-              }, {
-                level: 3,
-                name: "电气工程与智能控制"
-              }]
-            }
-          ]
-        }, {
-          name: "财政学类",
-          level: 1,
-          items: [{
-              type: "基本专业",
-              level: 2,
-              items: [{
-                level: 3,
-                name: "电气工程及其自动化"
-              }]
-            },
-            {
-              type: "特设专业",
-              level: 2,
-              items: [{
-                level: 3,
-                name: "智能电网信息工程"
-              }, {
-                level: 3,
-                name: "光源与照明"
-              }, {
-                level: 3,
-                name: "电气工程与智能控制"
-              }]
-            }
-          ]
-        }, {
-          name: "金融学类",
-          level: 1,
-          items: [{
-              type: "基本专业",
-              level: 2,
-              items: [{
-                level: 3,
-                name: "电气工程及其自动化"
-              }]
-            },
-            {
-              type: "特设专业",
-              level: 2,
-              items: [{
-                level: 3,
-                name: "智能电网信息工程"
-              }, {
-                level: 3,
-                name: "光源与照明"
-              }, {
-                level: 3,
-                name: "电气工程与智能控制"
-              }]
-            }
-          ]
-        }]
-      },
-      {
-        name: "哲学",
-        level: 0,
-        items: [{
-          name: "哲学类",
-          level: 1,
-          items: [{
-              type: "基本专业",
-              level: 2,
-              items: [{
-                level: 3,
-                name: "电气工程及其自动化"
-              }]
-            },
-            {
-              type: "特设专业",
-              level: 2,
-              items: [{
-                level: 3,
-                name: "智能电网信息工程"
-              }, {
-                level: 3,
-                name: "光源与照明"
-              }, {
-                level: 3,
-                name: "电气工程与智能控制"
-              }]
-            }
-          ]
-        }]
-      }, {
-        name: "教育学",
-        level: 0,
-        items: [{
-          name: "体育学类",
-          level: 1,
-          items: [{
-              type: "基本专业",
-              level: 2,
-              items: [{
-                level: 3,
-                name: "电气工程及其自动化"
-              }]
-            },
-            {
-              type: "特设专业",
-              level: 2,
-              items: [{
-                level: 3,
-                name: "智能电网信息工程"
-              }, {
-                level: 3,
-                name: "光源与照明"
-              }, {
-                level: 3,
-                name: "电气工程与智能控制"
-              }]
-            }
-          ]
-        }, {
-          name: "教育学类",
-          level: 1,
-          items: [{
-              type: "基本专业",
-              level: 2,
-              items: [{
-                level: 3,
-                name: "电气工程及其自动化"
-              }]
-            },
-            {
-              type: "特设专业",
-              level: 2,
-              items: [{
-                level: 3,
-                name: "智能电网信息工程"
-              }, {
-                level: 3,
-                name: "光源与照明"
-              }, {
-                level: 3,
-                name: "电气工程与智能控制"
-              }]
-            }
-          ]
-        }]
-      }, {
-        name: "工学",
-        level: 0,
-        items: [{
-          name: "力学类",
-          level: 1,
-          items: [{
-              type: "基本专业",
-              level: 2,
-              items: [{
-                level: 3,
-                name: "电气工程及其自动化"
-              }]
-            },
-            {
-              type: "特设专业",
-              level: 2,
-              items: [{
-                level: 3,
-                name: "智能电网信息工程"
-              }, {
-                level: 3,
-                name: "光源与照明"
-              }, {
-                level: 3,
-                name: "电气工程与智能控制"
-              }]
-            }
-          ]
-        }]
-      }
-    ],
-    majors2: [{
-        name: "电子信息大类",
-        level: 0,
-        items: [{
-          name: "计算机类",
-          level: 1,
-          items: [{
-              type: "基本专业",
-              level: 2,
-              items: [{
-                level: 3,
-                name: "电气工程及其自动化"
-              }]
-            },
-            {
-              type: "特设专业",
-              level: 2,
-              items: [{
-                level: 3,
-                name: "智能电网信息工程"
-              }, {
-                level: 3,
-                name: "光源与照明"
-              }, {
-                level: 3,
-                name: "电气工程与智能控制"
-              }]
-            }
-          ]
-        }, {
-          name: "通信类",
-          level: 1,
-          items: [{
-              type: "基本专业",
-              level: 2,
-              items: [{
-                level: 3,
-                name: "电气工程及其自动化"
-              }]
-            },
-            {
-              type: "特设专业",
-              level: 2,
-              items: [{
-                level: 3,
-                name: "智能电网信息工程"
-              }, {
-                level: 3,
-                name: "光源与照明"
-              }, {
-                level: 3,
-                name: "电气工程与智能控制"
-              }]
-            }
-          ]
-        }, {
-          name: "电子信息类",
-          level: 1,
-          items: [{
-              type: "基本专业",
-              level: 2,
-              items: [{
-                level: 3,
-                name: "电气工程及其自动化"
-              }]
-            },
-            {
-              type: "特设专业",
-              level: 2,
-              items: [{
-                level: 3,
-                name: "智能电网信息工程"
-              }, {
-                level: 3,
-                name: "光源与照明"
-              }, {
-                level: 3,
-                name: "电气工程与智能控制"
-              }]
-            }
-          ]
-        }]
-      },
-      {
-        name: "新闻传播大学",
-        level: 0,
-        items: [{
-          name: "新闻出版类",
-          level: 1,
-          items: [{
-              type: "基本专业",
-              level: 2,
-              items: [{
-                level: 3,
-                name: "电气工程及其自动化"
-              }]
-            },
-            {
-              type: "特设专业",
-              level: 2,
-              items: [{
-                level: 3,
-                name: "智能电网信息工程"
-              }, {
-                level: 3,
-                name: "光源与照明"
-              }, {
-                level: 3,
-                name: "电气工程与智能控制"
-              }]
-            }
-          ]
-        },{
-            name: "广播影视类",
-            level: 1,
-            items: [{
-              type: "基本专业",
-              level: 2,
-              items: [{
-                level: 3,
-                name: "电气工程及其自动化"
-              }]
-            },
-            {
-              type: "特设专业",
-              level: 2,
-              items: [{
-                level: 3,
-                name: "智能电网信息工程"
-              }, {
-                level: 3,
-                name: "光源与照明"
-              }, {
-                level: 3,
-                name: "电气工程与智能控制"
-              }]
-            }
-            ]
-          }]
-      }, {
-        name: "教育与体育大类",
-        level: 0,
-        items: [{
-          name: "语言类",
-          level: 1,
-          items: [{
-              type: "基本专业",
-              level: 2,
-              items: [{
-                level: 3,
-                name: "电气工程及其自动化"
-              }]
-            },
-            {
-              type: "特设专业",
-              level: 2,
-              items: [{
-                level: 3,
-                name: "智能电网信息工程"
-              }, {
-                level: 3,
-                name: "光源与照明"
-              }, {
-                level: 3,
-                name: "电气工程与智能控制"
-              }]
-            }
-          ]
-        }]
-      }, {
-        name: "土木建筑大类",
-        level: 0,
-        items: [{
-          name: "建筑设计类",
-          level: 1,
-          items: [{
-              type: "基本专业",
-              level: 2,
-              items: [{
-                level: 3,
-                name: "电气工程及其自动化"
-              }]
-            },
-            {
-              type: "特设专业",
-              level: 2,
-              items: [{
-                level: 3,
-                name: "智能电网信息工程"
-              }, {
-                level: 3,
-                name: "光源与照明"
-              }, {
-                level: 3,
-                name: "电气工程与智能控制"
-              }]
-            }
-          ]
-        }]
-      }
-    ],
+    majors1: [],
+    majors2: [],
   },
   handleMajorCurrentTabChange({
     detail
@@ -444,6 +27,9 @@ Page({
   onLoad: function(options) {
     var type = 0;
     var typetext = "搜索"
+    var that = this;
+
+
     if (options.hasOwnProperty("type")) {
       console.log(options.type)
       switch (options.type) {
@@ -465,9 +51,37 @@ Page({
       }
     }
 
+
+
+
     //如果是专业
     if (type == 2) {
+      //  http://localhost/majorslist/getmajorsList
+ 
+      wx.request({
+        url: 'http://localhost/majorslist/getmajorsList',
+        success: function(res) {
+          console.log(res)
+          that.setData({
+            majors1: res.data
+          })
+        }
+      })
+    }
 
+
+
+    if (type == 1) //差大学
+    {
+      wx.request({
+        url: 'http://localhost/college/getcollegesList',
+        success: function(res) {
+          console.log(res)
+          that.setData({
+            colleges: res.data
+          })
+        }
+      })
     }
 
 
@@ -475,7 +89,6 @@ Page({
       type: type,
       typetext: typetext,
     })
-
 
   },
   toCollegeDetail: function(e) {

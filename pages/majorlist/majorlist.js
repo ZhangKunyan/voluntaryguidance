@@ -4,7 +4,7 @@ Page({
   data: {
     majors:[
       {
-        name:"基本专业",
+        nameclass:"基本专业",
         items: [{
           id:100,
           name: "智能电网信息工程"
@@ -17,7 +17,7 @@ Page({
         }]
       },
       {
-        name: "特设专业",
+        nameclass: "特设专业",
         items: [{
           id: 104,
           name: "智能电网信息工程"
@@ -36,7 +36,21 @@ Page({
     console.log(options)
     //根据options查询数据
 
+    this.setData({
+      type: type,
+      typetext: typetext,
+    })
+    
+    // wx.request({
+    //   url: 'http://localhost/majorslist/getmajorsList',
+    //   success: function (res) {
+    //     that.setData({
+    //       majors: res.data
+    //     })
+    //   }
+    // })
+
   },
 
-  
+
 })
