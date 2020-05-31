@@ -4,16 +4,12 @@ Page({
     inputVal: "",
     typetext: "搜索",
     type: 0,
+    typeOption: "",
     majorCurrentTab: 'Undergraduate',
     colleges: [
-      //   {
-      //     id: 100,
-      //     name: "清华大学",
-      //     tags: ["985", "211", "双一流", "综合类"],
-      //     logo: "https://static-data.eol.cn/upload/logo/140.jpg",
-      //   },
-    ],
 
+    ],
+    preseartexts: [],
     majors1: [],
     majors2: [],
   },
@@ -28,10 +24,11 @@ Page({
     var type = 0;
     var typetext = "搜索"
     var that = this;
-
+    var typeOption = "";
 
     if (options.hasOwnProperty("type")) {
       console.log(options.type)
+      typeOption = options.type;
       switch (options.type) {
         case "common":
           type = 0;
@@ -57,7 +54,7 @@ Page({
     //如果是专业
     if (type == 2) {
       //  http://localhost/majorslist/getmajorsList
- 
+
       wx.request({
         url: 'http://localhost/majorslist/getmajorsList',
         success: function(res) {
@@ -87,6 +84,7 @@ Page({
 
     this.setData({
       type: type,
+      typeOption: typeOption,
       typetext: typetext,
     })
 
@@ -147,5 +145,27 @@ Page({
     this.setData({
       inputVal: e.detail.value
     });
+    //查询搜索提示
+    var that = this;
+
+    wx.request({
+      url: 'http://localhost/Search/like/' + this.data.typeOption + "?text=" + e.detail.value,
+      success: function(res) {
+        console.log(res)
+        that.setData({
+          preseartexts: res.data.pretext
+        })
+      }
+
+    })
+  },
+
+  clickpreSear: function(e) {
+    if (this.data.typeOption == "college") {
+      wx.navigateTo({
+        url: '/pages/collegedetail/collegedetail?id=' + e.currentTarget.dataset.id,
+      })
+    }
+
   }
 });

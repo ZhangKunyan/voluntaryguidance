@@ -1,4 +1,5 @@
 {
+  "navigationBarTitleText": "大学详细信息",
   "usingComponents": {
     "i-tag": "../../dist/tag/index",
     "i-tabs": "../../dist/tabs/index",

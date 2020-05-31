@@ -10,6 +10,15 @@
 .college-location {
 }
 
+.college-intro {
+  width: 90%;
+  margin-left: 5%;
+  margin-top: 20rpx;
+  font-size: 30rpx;
+  text-align: justify;
+
+}
+
 .colleges-logo {
   width: 50%;
   display: flex;
@@ -42,7 +51,7 @@
   margin-top: 20rpx;
 }
 
-.gradeLine-select{
+.gradeLine-select {
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -56,8 +65,46 @@
   border-right: 10rpx solid transparent;
   border-top: 20rpx solid #e0e0e0;
 }
-.triangle1{
+
+.triangle1 {
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+.college-table{
+  width: 94%;
+  margin-top: 20rpx;
+  margin-left: 3%;
+}
+
+.table, .table div {
+margin: 0 auto;
+}
+
+.table {
+display: table;
+width: 100%;
+border-collapse: collapse; 
+box-sizing: border-box;
+}
+
+.table-tr {
+display: table-row;
+height: 92rpx;
+}
+
+.table-th {
+display: table-cell; 
+font-weight: bold;
+border: 1rpx solid gray;
+text-align: center;
+vertical-align: middle;
+}
+
+.table-td {
+display: table-cell;
+border: 1rpx solid gray;
+text-align: center;
+vertical-align: middle;
 }

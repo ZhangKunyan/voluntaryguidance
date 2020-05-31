@@ -78,7 +78,7 @@
 					"id": 3,
 					"name": "pages/sear/sear",
 					"pathName": "pages/sear/sear",
-					"query": "type=college",
+					"query": "type=major",
 					"scene": null
 				},
 				{
