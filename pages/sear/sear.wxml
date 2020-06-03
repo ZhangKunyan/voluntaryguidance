@@ -58,12 +58,12 @@
     <i-tab key="Specialty" title="专科专业"></i-tab>
   </i-tabs>
   <block wx:for="{{majors1}}" wx:key="" wx:if="{{majorCurrentTab == 'Undergraduate'}}">
-    <view class="major-item" bindtap="selectMajorType" data-index="{{index}}">
+    <view class="major-item" bindtap="selectMajorType" data-index="{{index}}"  >
       {{item.name}}
     </view>
   </block>
   <block wx:for="{{majors2}}" wx:key="" wx:if="{{majorCurrentTab == 'Specialty'}}">
-    <view class="major-item" bindtap="selectMajorType" data-index="{{index}}">
+    <view class="major-item" bindtap="selectMajorType" data-index="{{index}}"  >
       {{item.name}}
     </view>
   </block>

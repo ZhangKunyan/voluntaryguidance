@@ -7,7 +7,6 @@ Page({
     typeOption: "",
     majorCurrentTab: 'Undergraduate',
     colleges: [
-
     ],
     preseartexts: [],
     majors1: [],
@@ -56,7 +55,7 @@ Page({
       //  http://localhost/majorslist/getmajorsList
 
       wx.request({
-        url: 'http://localhost/majorslist/getmajorsList',
+        url: 'http://localhost/majorslist/getmajorsClassList',
         success: function(res) {
           console.log(res)
           that.setData({
@@ -108,15 +107,17 @@ Page({
       majors = this.data.majors2
     }
     var selects = []
+    var idindex = []
 
     for (var i = 0; i < majors[index].items.length; i++) {
       selects.push(majors[index].items[i].name)
+      idindex.push(majors[index].items[i].id)
     }
     wx.showActionSheet({
       itemList: selects,
       success(res) {
         wx.navigateTo({
-          url: '/pages/majorlist/majorlist?type=' + majorCurrentTab + '&obj=' + majors[index].name + "&class=" + selects[res.tapIndex],
+          url: '/pages/majorlist/majorlist?classid=' + idindex[res.tapIndex],
         })
       },
       fail(res) {

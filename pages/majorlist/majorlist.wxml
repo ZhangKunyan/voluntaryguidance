@@ -1,8 +1,8 @@
 <block wx:for="{{majors}}" wx:key="">
-  <i-panel class="cell-panel-demo" title="{{item.name}}">
+  <i-panel class="cell-panel-demo" title="{{item.nameclass}}">
     <i-cell-group>
       <block wx:for="{{item.items}}" wx:key="">
-        <i-cell title="{{item.nameclass}}" is-link url="{{'/pages/majordetail/majordetail?id='+item.id}}"></i-cell>
+        <i-cell title="{{item.name}}" is-link url="{{'/pages/majordetail/majordetail?id='+item.id}}"></i-cell>
       </block>
     </i-cell-group>
   </i-panel>

@@ -1,13 +1,22 @@
 <view class="majorInfo">
   <i-panel>
-    <view>专业名称：</view>
-    <view>专业代码：</view>
-    <view>授予学位：</view>
-    <view>学科门类：</view>
+    <view>专业名称：{{detail.name}}</view>
+    <view>专业代码：{{detail.code}}</view>
+    <view>授予学位：{{detail.degree}}</view>
+    <view>学科门类：{{detail.major_class}}</view>
   </i-panel>
 </view>
-  <i-tabs current="{{ current }}" bindchange="handleChange">
-    <i-tab key="tab1" title="专业详解">1111</i-tab>
-    <i-tab key="tab2" title="开设院校">2222</i-tab>
-  </i-tabs>
+<i-tabs current="{{ current }}" bindchange="handleChange">
+  <i-tab key="tab1" title="专业详解">
 
+  </i-tab>
+  <i-tab key="tab2" title="开设院校"> {{detail.school}}</i-tab>
+</i-tabs>
+<view wx:if="{{current == 'tab1'}}">
+
+
+  <view class="major-intro"> {{detail.desc}}</view>
+</view>
+<view wx:if="{{current == 'tab2'}}">
+ <view class="major-school"> {{detail.school}}</view>
+</view>

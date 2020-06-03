@@ -8,3 +8,21 @@
   flex-direction: row;
 }
 
+.major-intro{
+  width: 90%;
+  margin-left: 5%;
+  margin-top: 20rpx;
+  font-size: 30rpx;
+  text-align: justify;
+
+}
+
+
+.major-school{
+  width: 90%;
+  margin-left: 5%;
+  margin-top: 20rpx;
+  font-size: 30rpx;
+  text-align: justify;
+
+}

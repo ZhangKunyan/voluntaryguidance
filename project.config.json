@@ -108,6 +108,27 @@
 					"pathName": "pages/mbtidetail/mbtidetail",
 					"query": "type=ISTJ",
 					"scene": null
+				},
+				{
+					"id": 8,
+					"name": "pages/majorlist/majorlist",
+					"pathName": "pages/majorlist/majorlist",
+					"query": "classid=1004",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/majordetail/majordetail",
+					"pathName": "pages/majordetail/majordetail",
+					"query": "id=1",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/recommend/recommend",
+					"pathName": "pages/recommend/recommend",
+					"query": "id=1",
+					"scene": null
 				}
 			]
 		}

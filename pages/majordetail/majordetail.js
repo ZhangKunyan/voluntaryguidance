@@ -2,8 +2,8 @@
 Page({
 
   data: {
-    majorid:0,
-    current: 'tab1'
+    current: 'tab1',
+    detail:{}
   },
 
   handleChange({ detail }) {
@@ -12,9 +12,16 @@ Page({
     });
   },
   onLoad: function (options) {
+    
     console.log(options)
-    this.setData({
-      majorid:options.id
+    var that = this;
+    wx.request({
+      url: 'http://localhost/majorslist/getmajorDetail/' + options.id,
+      success: function (res) {
+        that.setData({
+        detail: res.data[0]
+        })
+      }
     })
   },
 

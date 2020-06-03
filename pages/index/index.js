@@ -39,7 +39,7 @@ Page({
       },
       {
         text: "志愿推荐",
-        image: "https://g.eol.cn/static/media/major.008819a9.svg",
+        image: "https://www.eol.cn/e_images/index/2018/gj4.png",
         link: "../recommend/recommend"
       },
       {

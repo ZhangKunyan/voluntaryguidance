@@ -20,9 +20,9 @@
     </i-radio-group>
   </i-panel>
 
-  <i-panel title="考分:"></i-panel>
+  <i-panel title="高考排名:"></i-panel>
     <view class="input1">
-  <input class="userGrade" placeholder="请输入考分" type="number" value="{{userGrade}}" bindinput="inputChangeHandle"></input>
+  <input class="userGrade" placeholder="请输入省级排名" type="number" value="{{userGrade}}" bindinput="inputChangeHandle"></input>
     </view>
 
   <view>
@@ -31,5 +31,5 @@
 </view>
 
 <view wx:if="{{current=='tab2'}}">
-  123456
+根据MIT测试， 您适合计算机专业
 </view>
