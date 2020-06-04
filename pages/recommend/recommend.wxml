@@ -31,5 +31,5 @@
 </view>
 
 <view wx:if="{{current=='tab2'}}">
-根据MIT测试， 您适合计算机专业
+根据MBIT测试， 您适合计算机专业
 </view>

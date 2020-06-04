@@ -24,7 +24,7 @@ Page({
       },
       {
         text: "专业解读",
-        image: "../../../../../Images/voluntary.png",
+        image: "https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1587705584,2653786699&fm=15&gp=0.jpg",
          link: "../sear/sear?type=major"
       },
        {

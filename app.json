@@ -28,12 +28,12 @@
     "list": [
       {
         "pagePath": "pages/index/index",
-        "text": "首页",
+        
         "iconPath": "Images/首页.png",
         "selectedIconPath": "Images/首页1.png"
       },
       {
-        "text": "我的",
+      
         "pagePath": "pages/my/my",
         "iconPath": "Images/我的.png",
         "selectedIconPath": "Images/我的1.png"
