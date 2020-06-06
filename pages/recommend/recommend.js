@@ -1,13 +1,13 @@
 // pages/recommend/recommend.js
 const { $Toast } = require('../../dist/base/index');
 
-
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    mbti:{},
     current:'tab1',
     region:'辽宁',
     provinces: ["安徽", "北京", "重庆", "福建", "甘肃", "广东", "广西", "贵州", "河北", "河南", "黑龙江", "海南", "湖南", "湖北", "吉林", "江苏", "江西", "辽宁", "内蒙古", "宁夏", "青海", "山东", "山西", "陕西", "上海", "四川", "天津", "新疆", "西藏", "云南", "浙江"],
@@ -76,7 +76,10 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    var mbti =   wx.getStorageSync("mbti")
+    this.setData({
+      mbti: mbti
+    })
   },
 
   /**

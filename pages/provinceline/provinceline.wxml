@@ -1,7 +1,7 @@
 <view>
   <i-panel title="省份">
     <view style="padding: 15px;font-size:15px;">
-      <picker mode="selector" range="{{provinces}}"  bindchange="bindRegionChange" value="{{region}}">
+      <picker mode="selector" range="{{provinces}}" bindchange="bindRegionChange" value="{{region}}">
         {{region}}
       </picker>
     </view>
@@ -16,7 +16,28 @@
   </i-panel> -->
 
   <i-panel title="输入年份">
-    <i-input value="{{ value6 }}" type="number" right title="年份：" mode="wrapped" />
+    <i-input value="{{ year }}" type="number" right title="年份：" mode="wrapped" />
   </i-panel>
-<i-button bind:click="submitInfo" type="primary" >{{btntext}}</i-button>
+  <i-button bind:click="submitInfo" type="primary">{{btntext}}</i-button>
+</view>
+
+<view class="line-table" wx:if="{{linedata.length>0}}">
+  <view class="table">
+    <view class="table-tr">
+      <view class="table-th">考生类别</view>
+      <view class="table-th">本科一批</view>
+      <view class="table-th">本科二批</view>
+      <view class="table-th">专科批</view>
+    </view>
+
+    <block wx:for="{{linedata}}">
+      <view class="table-tr">
+        <view class="table-td">{{item.type==0?'理科':'文科'}}</view>
+        <view class="table-td">{{item.pro_gradeline1}}</view>
+        <view class="table-td">{{item.pro_gradeline2}}</view>
+        <view class="table-td">{{item.pro_gradeline3}}</view>
+      </view>
+    </block>
+
+  </view>
 </view>

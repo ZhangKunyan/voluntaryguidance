@@ -37,7 +37,7 @@ Page({
     region: "北京",
     grades: [],
     btntext: "录 入",
-    provinces: [ "安徽", "北京", "重庆", "福建", "甘肃", "广东", "广西", "贵州", "河北", "河南", "黑龙江", "海南", "湖南", "湖北", "吉林", "江苏", "江西", "辽宁", "内蒙古", "宁夏", "青海", "山东", "山西", "陕西", "上海", "四川", "天津", "新疆", "西藏", "云南", "浙江"]
+    provinces: ["安徽", "北京", "重庆", "福建", "甘肃", "广东", "广西", "贵州", "河北", "河南", "黑龙江", "海南", "湖南", "湖北", "吉林", "江苏", "江西", "辽宁", "内蒙古", "宁夏", "青海", "山东", "山西", "陕西", "上海", "四川", "天津", "新疆", "西藏", "云南", "浙江"]
   },
   handleClassChange({
     detail = {}
@@ -64,6 +64,18 @@ Page({
       grades: this.data.grades,
     }
     wx.setStorageSync("data", mydata)
+
+    var steps = []
+     steps = wx.getStorageSync("steps");
+    if (steps) {
+      
+    }else{
+      steps = [2,2,2]
+    }
+    steps[0] = 0;
+    steps[1] = 1;
+    wx.setStorageSync("steps", steps)
+
     $Toast({
       content: '提交成功',
       type: 'success'

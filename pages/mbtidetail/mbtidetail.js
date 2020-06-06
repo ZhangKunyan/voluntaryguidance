@@ -112,6 +112,17 @@ Page({
     mbti["majors"] = this.data.majorsSelected
     wx.setStorageSync("mbti", mbti)
 
+    var steps = []
+    steps = wx.getStorageSync("steps");
+    if (steps) {
+
+    } else {
+      steps = [2, 2, 2]
+    }
+    steps[1] = 0;
+    steps[2] = 1;
+    wx.setStorageSync("steps", steps)
+
     wx.showModal({
       title: '提示',
       content: 'MBTI测试完成',
