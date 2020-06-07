@@ -129,6 +129,20 @@
 					"pathName": "pages/recommend/recommend",
 					"query": "id=1",
 					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/recommend/recommend",
+					"pathName": "pages/recommend/recommend",
+					"query": "id=1",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/provinceline/provinceline",
+					"pathName": "pages/provinceline/provinceline",
+					"query": "id=1",
+					"scene": null
 				}
 			]
 		}

@@ -1,9 +1,11 @@
 // pages/provinceline/provinceline.js
 Page({
   data: {
-    region: '辽宁',
+    linedata:[],
+    region: '河北',
     classcurrent: '理科',
     position: 'left',
+    year:2019,
     checked: false,
     disabled: false,
     classid: [{
@@ -28,7 +30,23 @@ Page({
     });
   },
   submitInfo:function(){
-
+    var that = this;
+    wx.request({
+      url: 'http://localhost/Line/getprovinceline?province=' + that.data.region + '&year=' + that.data.year,
+      success: function (res) {
+        console.log(res)
+        that.setData({
+          linedata: res.data['data']
+        })
+        if (res.data['data'].length == 0){
+          wx.showModal({
+            title: '提示',
+            content: '数据库没有数据',
+            showCancel:false
+          })
+        }
+      }
+    })
   },
   /**
    * 生命周期函数--监听页面加载

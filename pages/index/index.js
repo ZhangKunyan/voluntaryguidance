@@ -12,7 +12,7 @@ Page({
     autoplay: false,
     interval: 2000,
     duration: 500,
-    steps:[0,2,3],
+    steps:[2,2,2],
     notice:{
       text: "最新消息！今年高考时间推迟一个月至7月举行",
       link:"../notice/notice"
@@ -58,6 +58,14 @@ Page({
       success: function (res) {
         _this.setData({
           mydata:res.data
+        });
+      },
+    })
+    wx.getStorage({
+      key: 'steps',
+      success: function (res) {
+        _this.setData({
+          steps: res.data
         });
       },
     })

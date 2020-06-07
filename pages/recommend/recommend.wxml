@@ -21,15 +21,28 @@
   </i-panel>
 
   <i-panel title="高考排名:"></i-panel>
-    <view class="input1">
-  <input class="userGrade" placeholder="请输入省级排名" type="number" value="{{userGrade}}" bindinput="inputChangeHandle"></input>
-    </view>
+  <view class="input1">
+    <input class="userGrade" placeholder="请输入省级排名" type="number" value="{{userGrade}}" bindinput="inputChangeHandle"></input>
+  </view>
 
   <view>
-  <i-button bind:click="submitInfo" type="primary">{{btntext}}</i-button>
+    <i-button bind:click="submitInfo" type="primary">{{btntext}}</i-button>
   </view>
 </view>
 
 <view wx:if="{{current=='tab2'}}">
+<<<<<<< HEAD
 根据MBIT测试， 您适合计算机专业
+=======
+  <view wx:if="{{mbti.majors}}">
+  <block wx:for="{{mbti.majors}}">
+    <view>
+   <i-button  type="primary">{{item}}</i-button></view>
+  </block>
+  </view>
+  <view wx:else>
+  您还没有进行mbti测试
+    <navigator url="/pages/mbtitest/mbtitest" hover-class="navigator-hover"><i-button  type="primary">去测试</i-button></navigator>
+  </view>
+>>>>>>> origin/master
 </view>
