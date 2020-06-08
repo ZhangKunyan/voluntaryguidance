@@ -31,9 +31,7 @@
 </view>
 
 <view wx:if="{{current=='tab2'}}">
-<<<<<<< HEAD
-根据MBIT测试， 您适合计算机专业
-=======
+
   <view wx:if="{{mbti.majors}}">
   <block wx:for="{{mbti.majors}}">
     <view>
@@ -44,5 +42,5 @@
   您还没有进行mbti测试
     <navigator url="/pages/mbtitest/mbtitest" hover-class="navigator-hover"><i-button  type="primary">去测试</i-button></navigator>
   </view>
->>>>>>> origin/master
+
 </view>
