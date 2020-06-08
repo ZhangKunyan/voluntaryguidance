@@ -35,7 +35,7 @@ Page({
     checked: false,
     disabled: false,
     region: "北京",
-    grades: [],
+    grades: [0,0,0,0],
     btntext: "录 入",
     provinces: ["安徽", "北京", "重庆", "福建", "甘肃", "广东", "广西", "贵州", "河北", "河南", "黑龙江", "海南", "湖南", "湖北", "吉林", "江苏", "江西", "辽宁", "内蒙古", "宁夏", "青海", "山东", "山西", "陕西", "上海", "四川", "天津", "新疆", "西藏", "云南", "浙江"]
   },
@@ -115,6 +115,34 @@ Page({
   saveName: function(v) {
     this.setData({
       name: v.detail.detail.value
+    })
+  },
+  saveGradeValue1:function(e){
+    var grades=  this.data.grades;
+    grades[0] = e.detail.detail.value;
+    this.setData({
+      grades: grades
+    })
+  },
+  saveGradeValue2: function (e) {
+    var grades = this.data.grades;
+    grades[1] = e.detail.detail.value;
+    this.setData({
+      grades: grades
+    })
+  },
+  saveGradeValue3: function (e) {
+    var grades = this.data.grades;
+    grades[2] = e.detail.detail.value;
+    this.setData({
+      grades: grades
+    })
+  },
+  saveGradeValue4: function (e) {
+    var grades = this.data.grades;
+    grades[3] = e.detail.detail.value;
+    this.setData({
+      grades: grades
     })
   }
 })

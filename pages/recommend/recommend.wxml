@@ -3,7 +3,42 @@
   <i-tab key="tab2" title="按MBTI测试推荐"></i-tab>
 </i-tabs>
 <view wx:if="{{current == 'tab1'}}">
-  <i-panel title="生源:">
+
+<view wx:if="{{type == 0}}">
+ <view wx:if="{{examgrade.class}}">
+    <i-alert type="success">
+      请验证如下信息是否准确
+    </i-alert>
+    <i-alert>
+      {{examgrade.region}}生源的 {{examgrade.class}}生， 高考成绩：语文{{examgrade.grades[0]}},数学{{examgrade.grades[1]}},外语{{examgrade.grades[2]}} ,综合{{examgrade.grades[3]}}
+    </i-alert>
+    <i-button type="primary" bindtap="topushbygrade">志愿推荐</i-button>
+    <navigator url="/pages/myexam/myexam" hover-class="navigator-hover">
+      <i-button type="primary">有错误，重新录入</i-button>
+    </navigator>
+  </view>
+  <view wx:else>
+    <i-alert type="warning">
+      您还没有录入高考成绩
+    </i-alert>
+    <navigator url="/pages/myexam/myexam" hover-class="navigator-hover">
+      <i-button type="primary">去录入</i-button>
+    </navigator>
+  </view>
+</view>
+
+<view wx:else>
+ <i-alert>
+ 根据您的信息，在去年您适合填报如下学校，推荐内容仅供参考，想知道自己适合什么专业？去看看MBTI测试吧
+
+ </i-alert>
+<block wx:for="{{pushres}}">
+    <i-alert type="success">
+      {{item.name}}=>  {{item.major}}
+    </i-alert>
+</block>
+</view>
+  <!-- <i-panel title="生源:">
     <view style="padding: 15px;font-size:15px;">
       <picker mode="selector" range="{{provinces}}" bindchange="bindRegionChange" value="{{region}}">
         {{region}}
@@ -27,20 +62,26 @@
 
   <view>
     <i-button bind:click="submitInfo" type="primary">{{btntext}}</i-button>
-  </view>
+  </view> -->
 </view>
 
 <view wx:if="{{current=='tab2'}}">
 
   <view wx:if="{{mbti.majors}}">
-  <block wx:for="{{mbti.majors}}">
-    <view>
-   <i-button  type="primary">{{item}}</i-button></view>
-  </block>
+    <block wx:for="{{mbti.majors}}">
+      <view>
+        <i-button type="primary">{{item}}</i-button>
+      </view>
+    </block>
   </view>
   <view wx:else>
-  您还没有进行mbti测试
-    <navigator url="/pages/mbtitest/mbtitest" hover-class="navigator-hover"><i-button  type="primary">去测试</i-button></navigator>
+    <i-alert type="warning">
+      您还没有进行mbti测试
+    </i-alert>
+
+    <navigator url="/pages/mbtitest/mbtitest" hover-class="navigator-hover">
+      <i-button type="primary">去测试</i-button>
+    </navigator>
   </view>
 
 </view>

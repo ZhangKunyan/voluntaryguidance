@@ -1,5 +1,7 @@
 // pages/recommend/recommend.js
-const { $Toast } = require('../../dist/base/index');
+const {
+  $Toast
+} = require('../../dist/base/index');
 
 Page({
 
@@ -7,9 +9,12 @@ Page({
    * 页面的初始数据
    */
   data: {
-    mbti:{},
-    current:'tab1',
-    region:'辽宁',
+    type: 0,
+    pushres: ["清华大学", "北京大学"],
+    mbti: {},
+    examgrade: {},
+    current: 'tab1',
+    region: '辽宁',
     provinces: ["安徽", "北京", "重庆", "福建", "甘肃", "广东", "广西", "贵州", "河北", "河南", "黑龙江", "海南", "湖南", "湖北", "吉林", "江苏", "江西", "辽宁", "内蒙古", "宁夏", "青海", "山东", "山西", "陕西", "上海", "四川", "天津", "新疆", "西藏", "云南", "浙江"],
     class1: [{
       id: 1,
@@ -24,7 +29,7 @@ Page({
     position: 'left',
     checked: false,
     disabled: false,
-    btntext:"推 荐",
+    btntext: "推 荐",
   },
   submitInfo: function () {
     //todo: submitGrades
@@ -33,12 +38,12 @@ Page({
       class: this.data.classcurrent,
       region: this.data.region,
       grades: this.data.grades,
-    } 
+    }
     wx.setStorageSync("data", mydata)
     $Toast({
       content: '提交成功',
       type: 'success'
-    }); 
+    });
     setTimeout(() => {
       $Toast.hide();
       wx.navigateBack({
@@ -54,7 +59,7 @@ Page({
     changed[prop] = e.detail.value
     this.setData(changed)
   },
-  
+
   bindRegionChange: function (e) {
     this.setData({
       region: this.data.provinces[e.detail.value]
@@ -67,7 +72,9 @@ Page({
       classcurrent: detail.value
     });
   },
-  handleChange({ detail }) {
+  handleChange({
+    detail
+  }) {
     this.setData({
       current: detail.key
     });
@@ -76,58 +83,31 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var mbti =   wx.getStorageSync("mbti")
+    var mbti = wx.getStorageSync("mbti")
+    var examgrade = wx.getStorageSync("data")
     this.setData({
-      mbti: mbti
+      mbti: mbti,
+      examgrade: examgrade
     })
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
+  topushbygrade: function () {
 
-  },
+var that = this;
+    var examgrade = this.data.examgrade;
+    wx.request({
+      url: 'http://localhost/Line/pushbygrade?type=' + examgrade.class + "&region=" + examgrade.region + "&grade1=" + examgrade.grades[0] + "&grade2=" + examgrade.grades[1] + "&grade3=" + examgrade.grades[2] + "&grade4=" + examgrade.grades[3],
+      success: function (res) {
+        console.log(res)
+        that.setData({
+          pushres:res.data.data
+        })
+      }
+    })
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+    this.setData({
+      type: 1
+    })
   }
+
 })
