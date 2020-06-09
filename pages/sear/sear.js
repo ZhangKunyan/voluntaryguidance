@@ -15,9 +15,21 @@ Page({
   handleMajorCurrentTabChange({
     detail
   }) {
+    var that = this;
     this.setData({
       majorCurrentTab: detail.key
     });
+ 
+    wx.request({
+      url: 'http://localhost/majorslist/getmajorsClassList/' + detail.key,
+      success: function (res) {
+        console.log(res)
+        that.setData({
+          majors2: res.data
+        })
+      }
+    })
+
   },
   onLoad: function(options) {
     var type = 0;
