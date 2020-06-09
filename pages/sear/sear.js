@@ -20,15 +20,17 @@ Page({
       majorCurrentTab: detail.key
     });
  
-    wx.request({
-      url: 'http://localhost/majorslist/getmajorsClassList/' + detail.key,
-      success: function (res) {
-        console.log(res)
-        that.setData({
-          majors2: res.data
-        })
-      }
-    })
+    if (detail.key == "Specialty"){
+      wx.request({
+        url: 'http://localhost/majorslist/getmajorsClassList/' + detail.key,
+        success: function (res) {
+          console.log(res)
+          that.setData({
+            majors2: res.data
+          })
+        }
+      })
+    }
 
   },
   onLoad: function(options) {
@@ -67,7 +69,7 @@ Page({
       //  http://localhost/majorslist/getmajorsList
 
       wx.request({
-        url: 'http://localhost/majorslist/getmajorsClassList',
+        url: 'http://localhost/majorslist/getmajorsClassList/Undergraduate',
         success: function(res) {
           console.log(res)
           that.setData({
